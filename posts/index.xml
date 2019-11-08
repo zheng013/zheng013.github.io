@@ -6,10 +6,25 @@
     <description>Recent content in Posts on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 07 Nov 2019 21:55:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Nov 2019 21:41:57 +0800</lastBuildDate>
     
 	<atom:link href="http://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTML入门博客</title>
+      <link>http://zheng-en.xyz/posts/html%E5%85%A5%E9%97%A8%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 08 Nov 2019 21:41:57 +0800</pubDate>
+      
+      <guid>http://zheng-en.xyz/posts/html%E5%85%A5%E9%97%A8%E5%8D%9A%E5%AE%A2/</guid>
+      <description>HTML入门知识点总结（第九到十课） HTML概览  知识一(概念介绍）
+ HyperText Markup Language (超文本标记语言） WWW(万维网)是基于互联网的基础上建立的 HTML之父—Tim Berners-Lee (发表了一遍文章HTML-Tags） WWW=URL(网址)+HTTP(服务器)+HTML(网页) 互联网的本质—就是内容的共享  知识二(如何制作出网页)
+ 域名知识 HTTP服务器知识 HTML知识 其他(js css 等等）  知识三
+ 原始的18个标签（ title h1~h6 nextid address base hp1/hp2 a dl/dt/dd isindex ul/li listing menu p dir ) H5指的就是在手机上呈现的页面 利用较为权威的MDN学习HTML知识 狭义的HTML5(标签 css 等等） 广义的HTML5（HTML5的技术合集，详情可查看MDN文档）  知识四(正确的学习HTML的方法)
+ 把所有标签读一遍，并理解用法。 最重要的记住div/span标签 找页面仿写,记忆遗忘曲线—要多写，多改。  知识五(体系化学习-学习一门语言)
+ 语法(大小写有区别吗 要加引号吗 如何注释(CTRL+/） 如何组合） 如何调试(看vscode、webstorm的颜色提示，使用HTML5验证器 ）
+yarn global add node-w3c-validator node-w3c-validator -i index.</description>
+    </item>
     
     <item>
       <title>如何使用GitHub</title>
