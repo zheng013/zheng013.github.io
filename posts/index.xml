@@ -2,36 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 郑李建的个人博客</title>
-    <link>http://zheng-en.xyz/posts/</link>
+    <link>https://zheng-en.xyz/posts/</link>
     <description>Recent content in Posts on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 08 Nov 2019 21:41:57 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2019 20:21:58 +0800</lastBuildDate>
     
-	<atom:link href="http://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>HTML常用标签</title>
+      <link>https://zheng-en.xyz/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Sat, 09 Nov 2019 20:21:58 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <description>HTML常用标签 a标签的用法  属性：href、target、download（少用）、rel=noopener（js）
+ 作用：跳转外部页面、跳转内部锚点、跳转到邮箱或电话
+ a的href的取值
+   网址（https://google.com、http://google.com、//google.com） 路径（a/b/c及a/b/c、index.html及./index.html） 伪协议（javascript:代码、mailto：邮箱、tel:手机号） id（href=#xxx 锚链接） 在http协议下的根目录和文件地址的目录不同    a的target取值   内置名字（-blank、-top、-parent、-self） 程序员命名（windows的name、iframe的name）   a的download   不是打开页面，而是下载页面 不是所有浏览器都支持，尤其是手机浏览器可能不支持  img 标签的用法  作用（发出get请求，展示一张图片） 属性（alt、height、width、src） 事件（onload、onerror js监听是否调用成功） 响应式（max-width:100% 满足手机的观看） 可替换元素（面试的时候可能会问到） 永远不要让图片变形作为前端开发，要么只写宽或高 alt：当图片没有正常加载出来时，给出的提示  table标签的用法  相关的标签   thead（表头） tbody（在里面放置tr、th、td） tfoot tr（一行） th （内容标题） td （内容）   相关样式   table-layout（行列的适应） border-collapse（合并） border-spacing（单元格之间的间距）  其他相关知识点  我们不用使用双击打开index.</description>
+    </item>
+    
+    <item>
       <title>HTML入门博客</title>
-      <link>http://zheng-en.xyz/posts/html%E5%85%A5%E9%97%A8%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://zheng-en.xyz/posts/html%E5%85%A5%E9%97%A8%E5%8D%9A%E5%AE%A2bad11.08/</link>
       <pubDate>Fri, 08 Nov 2019 21:41:57 +0800</pubDate>
       
-      <guid>http://zheng-en.xyz/posts/html%E5%85%A5%E9%97%A8%E5%8D%9A%E5%AE%A2/</guid>
-      <description>HTML入门知识点总结（第九到十课） HTML概览  知识一(概念介绍）
- HyperText Markup Language (超文本标记语言） WWW(万维网)是基于互联网的基础上建立的 HTML之父—Tim Berners-Lee (发表了一遍文章HTML-Tags） WWW=URL(网址)+HTTP(服务器)+HTML(网页) 互联网的本质—就是内容的共享  知识二(如何制作出网页)
- 域名知识 HTTP服务器知识 HTML知识 其他(js css 等等）  知识三
- 原始的18个标签（ title h1~h6 nextid address base hp1/hp2 a dl/dt/dd isindex ul/li listing menu p dir ) H5指的就是在手机上呈现的页面 利用较为权威的MDN学习HTML知识 狭义的HTML5(标签 css 等等） 广义的HTML5（HTML5的技术合集，详情可查看MDN文档）  知识四(正确的学习HTML的方法)
- 把所有标签读一遍，并理解用法。 最重要的记住div/span标签 找页面仿写,记忆遗忘曲线—要多写，多改。  知识五(体系化学习-学习一门语言)
- 语法(大小写有区别吗 要加引号吗 如何注释(CTRL+/） 如何组合） 如何调试(看vscode、webstorm的颜色提示，使用HTML5验证器 ）
-yarn global add node-w3c-validator node-w3c-validator -i index.</description>
+      <guid>https://zheng-en.xyz/posts/html%E5%85%A5%E9%97%A8%E5%8D%9A%E5%AE%A2bad11.08/</guid>
+      <description>HTML入门知识点总结（第九到十课） HTML概览  知识一(概念介绍） HyperText Markup Language (超文本标记语言） WWW(万维网)是基于互联网的基础上建立的 HTML之父—Tim Berners-Lee (发表了一遍文章HTML-Tags） WWW=URL(网址)+HTTP(服务器)+HTML(网页) 互联网的本质—就是内容的共享
+ 知识二(如何制作出网页)
+ 域名知识
+ HTTP服务器知识
+ HTML知识
+ 其他(js css 等等）
+ 知识三
+ 原始的18个标签（ title h1~h6 nextid address base hp1/hp2 a dl/dt/dd isindex ul/li listing menu p dir )
+ H5指的就是在手机上呈现的页面
+ 利用较为权威的MDN学习HTML知识
+ 狭义的HTML5(标签 css 等等）
+ 广义的HTML5（HTML5的技术合集，详情可查看MDN文档）
+ 知识四(正确的学习HTML的方法)
+ 把所有标签读一遍，并理解用法。
+ 最重要的记住div/span标签
+ 找页面仿写,记忆遗忘曲线—要多写，多改。
+ 知识五(体系化学习-学习一门语言)
+ 语法(大小写有区别吗 要加引号吗 如何注释(CTRL+/） 如何组合）</description>
     </item>
     
     <item>
       <title>如何使用GitHub</title>
-      <link>http://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github.pages%E9%A2%84%E8%A7%88%E9%A1%B5%E9%9D%A2/</link>
+      <link>https://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github.pages%E9%A2%84%E8%A7%88%E9%A1%B5%E9%9D%A2/</link>
       <pubDate>Thu, 07 Nov 2019 21:55:01 +0800</pubDate>
       
-      <guid>http://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github.pages%E9%A2%84%E8%A7%88%E9%A1%B5%E9%9D%A2/</guid>
+      <guid>https://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github.pages%E9%A2%84%E8%A7%88%E9%A1%B5%E9%9D%A2/</guid>
       <description>如何使用GitHub.pages预览页面  登入Github,新建repo仓库
  在左上角找到新建仓库,点击创建. 自定义仓库名称（无需做任何选项的操作）,确定仓库的创建.   进入新建的repo仓库,在右边tab中找到settings
  点击进入settings选项,下滑找到GitHub Pages栏进行设置选择. 在source选项一栏中下拉选择master branch,然后点击save. 你会在GitHub栏看到一个自动生成的预览页面网址,就成功了.   想要预览html页面
@@ -40,10 +63,10 @@ yarn global add node-w3c-validator node-w3c-validator -i index.</description>
     
     <item>
       <title>如何用hugo搭建个人博客</title>
-      <link>http://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Wed, 06 Nov 2019 23:44:11 +0800</pubDate>
       
-      <guid>http://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>Hugo制作博客步骤  下载Hugo (windows)
 windows安装地址
  解压并运行
@@ -62,10 +85,10 @@ hugo new posts/我的第二篇博客.md hugo ga gc git push  这样就完成了�
     
     <item>
       <title>开博大吉</title>
-      <link>http://zheng-en.xyz/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</link>
+      <link>https://zheng-en.xyz/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</link>
       <pubDate>Wed, 06 Nov 2019 21:03:07 +0800</pubDate>
       
-      <guid>http://zheng-en.xyz/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</guid>
+      <guid>https://zheng-en.xyz/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</guid>
       <description>Hi！ 大家好！ 我的博客开通啦，希望能写出好的文章给大家参考。</description>
     </item>
     
