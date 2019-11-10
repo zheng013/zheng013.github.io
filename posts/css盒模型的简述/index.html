@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>郑李建的个人博客  | CSS盒模型的简述</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="CSS盒模型的简述" />
+<meta property="og:description" content="盒模型的简述 两种盒模型  conten-box内容盒模型——内容就是盒子的边界 border-box边框盒模型——边框才是盒子的边界  宽度定义  content-box width=内容宽度 border-box width=内容宽度&#43;padding&#43;border  margin合并 那些情况会合并  父子margin合并（按最长的尺寸来） 兄弟margin合并  取消margin合并的方法  父子合并用padding/border 父子合并用overflow：hidden 父子合并用dispaly：flex 兄弟合并是符合预期的 兄弟合并可以用inline-block css属性会更新，只能去死记和多用  小知识点（技巧）  不要写width：100%，特殊情况除外 没有所谓的块级元素和内联元素，是根据dispaly所定义的类型来决定（block/inline/inline-block） border调试法解决大部分问题 要注意css里要加单位，英文冒号和分号 查资源（MDN、css tricks、张鑫旭、css spec（W3C）） 使用caniuse.com查看css样式是否兼容浏览器 语法一：选择器{属性名：属性值；注释（/注释内容/）} 语法二
+@charset&quot;UTF-8&quot; /*指定字符编码的类型*/ @import url(2.css) @media(min-width:100px)和(max-width:200px){语法一}  内联元素从左到右，折行排列
+ 块级元素从上到下排列
+ inline的宽度为内部inline元素的宽度和，不能用width设置
+ inline的高度由line-height简介确定，也不能用height设置
+ block默认自动计算宽度，可用width设置，其高度由文档流元素决定，也可用height设置
+ inline-block包含两个的特定，可用width、height设置宽高
+  css这一块的内容还是要看多记多背，要自己动手去实践。这种没有逻辑性的东西，就要靠习惯去培养多他的感觉。 每天都要加油呀👑😁🎈 谢谢观看！！！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zheng-en.xyz/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%AE%80%E8%BF%B0/" />
+<meta property="article:published_time" content="2019-11-10T18:18:52+08:00" />
+<meta property="article:modified_time" content="2019-11-10T18:18:52+08:00" />
+<meta itemprop="name" content="CSS盒模型的简述">
+<meta itemprop="description" content="盒模型的简述 两种盒模型  conten-box内容盒模型——内容就是盒子的边界 border-box边框盒模型——边框才是盒子的边界  宽度定义  content-box width=内容宽度 border-box width=内容宽度&#43;padding&#43;border  margin合并 那些情况会合并  父子margin合并（按最长的尺寸来） 兄弟margin合并  取消margin合并的方法  父子合并用padding/border 父子合并用overflow：hidden 父子合并用dispaly：flex 兄弟合并是符合预期的 兄弟合并可以用inline-block css属性会更新，只能去死记和多用  小知识点（技巧）  不要写width：100%，特殊情况除外 没有所谓的块级元素和内联元素，是根据dispaly所定义的类型来决定（block/inline/inline-block） border调试法解决大部分问题 要注意css里要加单位，英文冒号和分号 查资源（MDN、css tricks、张鑫旭、css spec（W3C）） 使用caniuse.com查看css样式是否兼容浏览器 语法一：选择器{属性名：属性值；注释（/注释内容/）} 语法二
+@charset&quot;UTF-8&quot; /*指定字符编码的类型*/ @import url(2.css) @media(min-width:100px)和(max-width:200px){语法一}  内联元素从左到右，折行排列
+ 块级元素从上到下排列
+ inline的宽度为内部inline元素的宽度和，不能用width设置
+ inline的高度由line-height简介确定，也不能用height设置
+ block默认自动计算宽度，可用width设置，其高度由文档流元素决定，也可用height设置
+ inline-block包含两个的特定，可用width、height设置宽高
+  css这一块的内容还是要看多记多背，要自己动手去实践。这种没有逻辑性的东西，就要靠习惯去培养多他的感觉。 每天都要加油呀👑😁🎈 谢谢观看！！！">
+
+
+<meta itemprop="datePublished" content="2019-11-10T18:18:52&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-10T18:18:52&#43;08:00" />
+<meta itemprop="wordCount" content="45">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSS盒模型的简述"/>
+<meta name="twitter:description" content="盒模型的简述 两种盒模型  conten-box内容盒模型——内容就是盒子的边界 border-box边框盒模型——边框才是盒子的边界  宽度定义  content-box width=内容宽度 border-box width=内容宽度&#43;padding&#43;border  margin合并 那些情况会合并  父子margin合并（按最长的尺寸来） 兄弟margin合并  取消margin合并的方法  父子合并用padding/border 父子合并用overflow：hidden 父子合并用dispaly：flex 兄弟合并是符合预期的 兄弟合并可以用inline-block css属性会更新，只能去死记和多用  小知识点（技巧）  不要写width：100%，特殊情况除外 没有所谓的块级元素和内联元素，是根据dispaly所定义的类型来决定（block/inline/inline-block） border调试法解决大部分问题 要注意css里要加单位，英文冒号和分号 查资源（MDN、css tricks、张鑫旭、css spec（W3C）） 使用caniuse.com查看css样式是否兼容浏览器 语法一：选择器{属性名：属性值；注释（/注释内容/）} 语法二
+@charset&quot;UTF-8&quot; /*指定字符编码的类型*/ @import url(2.css) @media(min-width:100px)和(max-width:200px){语法一}  内联元素从左到右，折行排列
+ 块级元素从上到下排列
+ inline的宽度为内部inline元素的宽度和，不能用width设置
+ inline的高度由line-height简介确定，也不能用height设置
+ block默认自动计算宽度，可用width设置，其高度由文档流元素决定，也可用height设置
+ inline-block包含两个的特定，可用width、height设置宽高
+  css这一块的内容还是要看多记多背，要自己动手去实践。这种没有逻辑性的东西，就要靠习惯去培养多他的感觉。 每天都要加油呀👑😁🎈 谢谢观看！！！"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://zheng-en.xyz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      郑李建的个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">CSS盒模型的简述</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-11-10T18:18:52&#43;08:00">November 10, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="盒模型的简述">盒模型的简述</h1>
+
+<h2 id="两种盒模型">两种盒模型</h2>
+
+<ul>
+<li>conten-box内容盒模型——内容就是盒子的边界</li>
+<li>border-box边框盒模型——边框才是盒子的边界</li>
+</ul>
+
+<p><img src="/images/heizimodel.png" alt="hezi" /></p>
+
+<h2 id="宽度定义">宽度定义</h2>
+
+<ul>
+<li>content-box width=内容宽度</li>
+<li>border-box  width=内容宽度+padding+border</li>
+</ul>
+
+<h2 id="margin合并">margin合并</h2>
+
+<h3 id="那些情况会合并">那些情况会合并</h3>
+
+<ul>
+<li>父子margin合并（按最长的尺寸来）</li>
+<li>兄弟margin合并</li>
+</ul>
+
+<h3 id="取消margin合并的方法">取消margin合并的方法</h3>
+
+<ul>
+<li>父子合并用padding/border</li>
+<li>父子合并用overflow：hidden</li>
+<li>父子合并用dispaly：flex</li>
+<li>兄弟合并是符合预期的</li>
+<li>兄弟合并可以用inline-block</li>
+<li>css属性会更新，只能去死记和多用</li>
+</ul>
+
+<h2 id="小知识点-技巧">小知识点（技巧）</h2>
+
+<ul>
+<li>不要写width：100%，特殊情况除外</li>
+<li>没有所谓的块级元素和内联元素，是根据dispaly所定义的类型来决定（block/inline/inline-block）</li>
+<li>border调试法解决大部分问题</li>
+<li>要注意css里要加单位，英文冒号和分号</li>
+<li>查资源（MDN、css tricks、张鑫旭、css spec（W3C））</li>
+<li>使用caniuse.com查看css样式是否兼容浏览器</li>
+<li>语法一：选择器{属性名：属性值；注释（/<em>注释内容</em>/）}</li>
+
+<li><p>语法二</p>
+
+<pre><code class="language-(css)">@charset&quot;UTF-8&quot; /*指定字符编码的类型*/
+@import url(2.css)
+@media(min-width:100px)和(max-width:200px){语法一}
+</code></pre></li>
+
+<li><p>内联元素从左到右，折行排列</p></li>
+
+<li><p>块级元素从上到下排列</p></li>
+
+<li><p>inline的宽度为内部inline元素的宽度和，不能用width设置</p></li>
+
+<li><p>inline的高度由line-height简介确定，也不能用height设置</p></li>
+
+<li><p>block默认自动计算宽度，可用width设置，其高度由文档流元素决定，也可用height设置</p></li>
+
+<li><p>inline-block包含两个的特定，可用width、height设置宽高</p></li>
+</ul>
+
+<h3 id="css这一块的内容还是要看多记多背-要自己动手去实践-这种没有逻辑性的东西-就要靠习惯去培养多他的感觉-每天都要加油呀">css这一块的内容还是要看多记多背，要自己动手去实践。这种没有逻辑性的东西，就要靠习惯去培养多他的感觉。 每天都要加油呀👑😁🎈</h3>
+
+<p>谢谢观看！！！</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zheng-en.xyz/" >
+    &copy; 2019 郑李建的个人博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

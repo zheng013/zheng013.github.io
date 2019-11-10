@@ -6,10 +6,26 @@
     <description>Recent content on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 09 Nov 2019 20:21:58 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Nov 2019 18:18:52 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSS盒模型的简述</title>
+      <link>https://zheng-en.xyz/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%AE%80%E8%BF%B0/</link>
+      <pubDate>Sun, 10 Nov 2019 18:18:52 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%AE%80%E8%BF%B0/</guid>
+      <description>盒模型的简述 两种盒模型  conten-box内容盒模型——内容就是盒子的边界 border-box边框盒模型——边框才是盒子的边界  宽度定义  content-box width=内容宽度 border-box width=内容宽度+padding+border  margin合并 那些情况会合并  父子margin合并（按最长的尺寸来） 兄弟margin合并  取消margin合并的方法  父子合并用padding/border 父子合并用overflow：hidden 父子合并用dispaly：flex 兄弟合并是符合预期的 兄弟合并可以用inline-block css属性会更新，只能去死记和多用  小知识点（技巧）  不要写width：100%，特殊情况除外 没有所谓的块级元素和内联元素，是根据dispaly所定义的类型来决定（block/inline/inline-block） border调试法解决大部分问题 要注意css里要加单位，英文冒号和分号 查资源（MDN、css tricks、张鑫旭、css spec（W3C）） 使用caniuse.com查看css样式是否兼容浏览器 语法一：选择器{属性名：属性值；注释（/注释内容/）} 语法二
+@charset&amp;quot;UTF-8&amp;quot; /*指定字符编码的类型*/ @import url(2.css) @media(min-width:100px)和(max-width:200px){语法一}  内联元素从左到右，折行排列
+ 块级元素从上到下排列
+ inline的宽度为内部inline元素的宽度和，不能用width设置
+ inline的高度由line-height简介确定，也不能用height设置
+ block默认自动计算宽度，可用width设置，其高度由文档流元素决定，也可用height设置
+ inline-block包含两个的特定，可用width、height设置宽高
+  css这一块的内容还是要看多记多背，要自己动手去实践。这种没有逻辑性的东西，就要靠习惯去培养多他的感觉。 每天都要加油呀👑😁🎈 谢谢观看！！！</description>
+    </item>
     
     <item>
       <title>HTML常用标签</title>
