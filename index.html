@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/" />
 
-<meta property="og:updated_time" content="2019-11-15T22:22:27+08:00" />
+<meta property="og:updated_time" content="2019-11-16T19:40:01+08:00" />
 <meta itemprop="name" content="郑李建的个人博客">
 <meta itemprop="description" content="">
 
@@ -122,6 +122,30 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90url/" class="color-inherit dim link">
+            浅析URL
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          浅析URL URL 包含哪几部分（统一资源定位符）  URL=HTTP（协议）+域名或IP+端口号+路径+查询字符串+锚点 HTTP：HyperText Transfer Protocol 超文本传输协议 域名就是IP的别称，便于用户快速访问你得网站 端口号：一台机器提供的很多服务对应着不同的端口号（默认80提供HTTP服务 默认443提供HTTPS的服务） 路径：根据提供的路径不同可以请求访问不同的页面 查询字符串：根据查询字符串的不同可以访问同一个页面下的不同内容 锚点：根据不同的#锚点可以访问统一页面的不同位置  DNS 的作用是什么  将域名与对应的IP对映起来 方便用能通过域名直接的去访问到IP  nslookup命令如何使用  nslookup baidu.com(域名) 可以查找到域名所对应的所有服务器IP地址  IP的作用是什么  可以定位到一台设备 可以封装的数据报文，以便跟其他的设备进行交流 一个域名可以对应多个IP地址（均衡负载） 一个IP地址也可以对应不同的域名（开发者为了省钱）  ping 命令怎么用  ping baidu.com 可以得到域名所在地区对应的一台服务器的IP地址 便于测试本机与服务器的联通性，较为精确。  域名是什么  可以是自己申请的由字符串构成的，也是IP地址的代称 com是顶级域名 xxx.com是二级域名（俗称一级域名） www.xxx.com是三级域名（俗称二级域名） 他们之间为父子关系 有时候www.xxx.com 和 xxx.com可能不是同一个域名，访问到的网站也可能不同。  其他知识点  锚点的内容不会传至服务器上 利用curl命令发送HTTP请求 URL在我理解就是相当于我们现实生活中的定位，我可以通过这个地址找到你或者其他的。   加油&mdash; 后续有相关想法和内容还会一直更新，keep going！ 谢谢观看😄😄😄
+        </div>
+          <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90url/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://zheng-en.xyz/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
             CSS知识总结
             </a>
@@ -173,39 +197,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://zheng-en.xyz/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="color-inherit dim link">
-            HTML常用标签
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          HTML常用标签 a标签的用法  属性：href、target、download（少用）、rel=noopener（js）
- 作用：跳转外部页面、跳转内部锚点、跳转到邮箱或电话
- a的href的取值
-   网址（https://google.com、http://google.com、//google.com） 路径（a/b/c及a/b/c、index.html及./index.html） 伪协议（javascript:代码、mailto：邮箱、tel:手机号） id（href=#xxx 锚链接） 在http协议下的根目录和文件地址的目录不同    a的target取值   内置名字（-blank、-top、-parent、-self） 程序员命名（windows的name、iframe的name）   a的download   不是打开页面，而是下载页面 不是所有浏览器都支持，尤其是手机浏览器可能不支持  img 标签的用法  作用（发出get请求，展示一张图片） 属性（alt、height、width、src） 事件（onload、onerror js监听是否调用成功） 响应式（max-width:100% 满足手机的观看） 可替换元素（面试的时候可能会问到） 永远不要让图片变形作为前端开发，要么只写宽或高 alt：当图片没有正常加载出来时，给出的提示  table标签的用法  相关的标签   thead（表头） tbody（在里面放置tr、th、td） tfoot tr（一行） th （内容标题） td （内容）   相关样式   table-layout（行列的适应） border-collapse（合并） border-spacing（单元格之间的间距）  其他相关知识点  我们不用使用双击打开index.
-        </div>
-          <a href="https://zheng-en.xyz/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://zheng-en.xyz/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="link black dim">
+              HTML常用标签
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://zheng-en.xyz/posts/html%E5%85%A5%E9%97%A8%E5%8D%9A%E5%AE%A2bad11.08/" class="link black dim">
@@ -222,12 +225,6 @@
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
               如何用hugo搭建个人博客
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://zheng-en.xyz/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/" class="link black dim">
-              开博大吉
             </a>
           </h2>
         

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>郑李建的个人博客  | 浅析URL</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="浅析URL" />
+<meta property="og:description" content="浅析URL URL 包含哪几部分（统一资源定位符）  URL=HTTP（协议）&#43;域名或IP&#43;端口号&#43;路径&#43;查询字符串&#43;锚点 HTTP：HyperText Transfer Protocol 超文本传输协议 域名就是IP的别称，便于用户快速访问你得网站 端口号：一台机器提供的很多服务对应着不同的端口号（默认80提供HTTP服务 默认443提供HTTPS的服务） 路径：根据提供的路径不同可以请求访问不同的页面 查询字符串：根据查询字符串的不同可以访问同一个页面下的不同内容 锚点：根据不同的#锚点可以访问统一页面的不同位置  DNS 的作用是什么  将域名与对应的IP对映起来 方便用能通过域名直接的去访问到IP  nslookup命令如何使用  nslookup baidu.com(域名) 可以查找到域名所对应的所有服务器IP地址  IP的作用是什么  可以定位到一台设备 可以封装的数据报文，以便跟其他的设备进行交流 一个域名可以对应多个IP地址（均衡负载） 一个IP地址也可以对应不同的域名（开发者为了省钱）  ping 命令怎么用  ping baidu.com 可以得到域名所在地区对应的一台服务器的IP地址 便于测试本机与服务器的联通性，较为精确。  域名是什么  可以是自己申请的由字符串构成的，也是IP地址的代称 com是顶级域名 xxx.com是二级域名（俗称一级域名） www.xxx.com是三级域名（俗称二级域名） 他们之间为父子关系 有时候www.xxx.com 和 xxx.com可能不是同一个域名，访问到的网站也可能不同。  其他知识点  锚点的内容不会传至服务器上 利用curl命令发送HTTP请求 URL在我理解就是相当于我们现实生活中的定位，我可以通过这个地址找到你或者其他的。   加油&mdash; 后续有相关想法和内容还会一直更新，keep going！ 谢谢观看😄😄😄" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90url/" />
+<meta property="article:published_time" content="2019-11-16T19:40:01+08:00" />
+<meta property="article:modified_time" content="2019-11-16T19:40:01+08:00" />
+<meta itemprop="name" content="浅析URL">
+<meta itemprop="description" content="浅析URL URL 包含哪几部分（统一资源定位符）  URL=HTTP（协议）&#43;域名或IP&#43;端口号&#43;路径&#43;查询字符串&#43;锚点 HTTP：HyperText Transfer Protocol 超文本传输协议 域名就是IP的别称，便于用户快速访问你得网站 端口号：一台机器提供的很多服务对应着不同的端口号（默认80提供HTTP服务 默认443提供HTTPS的服务） 路径：根据提供的路径不同可以请求访问不同的页面 查询字符串：根据查询字符串的不同可以访问同一个页面下的不同内容 锚点：根据不同的#锚点可以访问统一页面的不同位置  DNS 的作用是什么  将域名与对应的IP对映起来 方便用能通过域名直接的去访问到IP  nslookup命令如何使用  nslookup baidu.com(域名) 可以查找到域名所对应的所有服务器IP地址  IP的作用是什么  可以定位到一台设备 可以封装的数据报文，以便跟其他的设备进行交流 一个域名可以对应多个IP地址（均衡负载） 一个IP地址也可以对应不同的域名（开发者为了省钱）  ping 命令怎么用  ping baidu.com 可以得到域名所在地区对应的一台服务器的IP地址 便于测试本机与服务器的联通性，较为精确。  域名是什么  可以是自己申请的由字符串构成的，也是IP地址的代称 com是顶级域名 xxx.com是二级域名（俗称一级域名） www.xxx.com是三级域名（俗称二级域名） 他们之间为父子关系 有时候www.xxx.com 和 xxx.com可能不是同一个域名，访问到的网站也可能不同。  其他知识点  锚点的内容不会传至服务器上 利用curl命令发送HTTP请求 URL在我理解就是相当于我们现实生活中的定位，我可以通过这个地址找到你或者其他的。   加油&mdash; 后续有相关想法和内容还会一直更新，keep going！ 谢谢观看😄😄😄">
+
+
+<meta itemprop="datePublished" content="2019-11-16T19:40:01&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-16T19:40:01&#43;08:00" />
+<meta itemprop="wordCount" content="50">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅析URL"/>
+<meta name="twitter:description" content="浅析URL URL 包含哪几部分（统一资源定位符）  URL=HTTP（协议）&#43;域名或IP&#43;端口号&#43;路径&#43;查询字符串&#43;锚点 HTTP：HyperText Transfer Protocol 超文本传输协议 域名就是IP的别称，便于用户快速访问你得网站 端口号：一台机器提供的很多服务对应着不同的端口号（默认80提供HTTP服务 默认443提供HTTPS的服务） 路径：根据提供的路径不同可以请求访问不同的页面 查询字符串：根据查询字符串的不同可以访问同一个页面下的不同内容 锚点：根据不同的#锚点可以访问统一页面的不同位置  DNS 的作用是什么  将域名与对应的IP对映起来 方便用能通过域名直接的去访问到IP  nslookup命令如何使用  nslookup baidu.com(域名) 可以查找到域名所对应的所有服务器IP地址  IP的作用是什么  可以定位到一台设备 可以封装的数据报文，以便跟其他的设备进行交流 一个域名可以对应多个IP地址（均衡负载） 一个IP地址也可以对应不同的域名（开发者为了省钱）  ping 命令怎么用  ping baidu.com 可以得到域名所在地区对应的一台服务器的IP地址 便于测试本机与服务器的联通性，较为精确。  域名是什么  可以是自己申请的由字符串构成的，也是IP地址的代称 com是顶级域名 xxx.com是二级域名（俗称一级域名） www.xxx.com是三级域名（俗称二级域名） 他们之间为父子关系 有时候www.xxx.com 和 xxx.com可能不是同一个域名，访问到的网站也可能不同。  其他知识点  锚点的内容不会传至服务器上 利用curl命令发送HTTP请求 URL在我理解就是相当于我们现实生活中的定位，我可以通过这个地址找到你或者其他的。   加油&mdash; 后续有相关想法和内容还会一直更新，keep going！ 谢谢观看😄😄😄"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://zheng-en.xyz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      郑李建的个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">浅析URL</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-11-16T19:40:01&#43;08:00">November 16, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="浅析url">浅析URL</h1>
+
+<h2 id="url-包含哪几部分-统一资源定位符">URL 包含哪几部分（统一资源定位符）</h2>
+
+<ul>
+<li>URL=HTTP（协议）+域名或IP+端口号+路径+查询字符串+锚点</li>
+<li>HTTP：HyperText Transfer Protocol 超文本传输协议</li>
+<li>域名就是IP的别称，便于用户快速访问你得网站</li>
+<li>端口号：一台机器提供的很多服务对应着不同的端口号（默认80提供HTTP服务 默认443提供HTTPS的服务）</li>
+<li>路径：根据提供的路径不同可以请求访问不同的页面</li>
+<li>查询字符串：根据查询字符串的不同可以访问同一个页面下的不同内容</li>
+<li>锚点：根据不同的#锚点可以访问统一页面的不同位置</li>
+</ul>
+
+<h2 id="dns-的作用是什么">DNS 的作用是什么</h2>
+
+<ul>
+<li>将域名与对应的IP对映起来</li>
+<li>方便用能通过域名直接的去访问到IP</li>
+</ul>
+
+<h2 id="nslookup命令如何使用">nslookup命令如何使用</h2>
+
+<ul>
+<li>nslookup baidu.com(域名)</li>
+<li>可以查找到域名所对应的所有服务器IP地址</li>
+</ul>
+
+<h2 id="ip的作用是什么">IP的作用是什么</h2>
+
+<ul>
+<li>可以定位到一台设备</li>
+<li>可以封装的数据报文，以便跟其他的设备进行交流</li>
+<li>一个域名可以对应多个IP地址（均衡负载）</li>
+<li>一个IP地址也可以对应不同的域名（开发者为了省钱）</li>
+</ul>
+
+<h2 id="ping-命令怎么用">ping 命令怎么用</h2>
+
+<ul>
+<li>ping baidu.com</li>
+<li>可以得到域名所在地区对应的一台服务器的IP地址</li>
+<li>便于测试本机与服务器的联通性，较为精确。</li>
+</ul>
+
+<h2 id="域名是什么">域名是什么</h2>
+
+<ul>
+<li>可以是自己申请的由字符串构成的，也是IP地址的代称</li>
+<li>com是顶级域名</li>
+<li>xxx.com是二级域名（俗称一级域名）</li>
+<li>www.xxx.com是三级域名（俗称二级域名）</li>
+<li>他们之间为父子关系</li>
+<li>有时候www.xxx.com 和 xxx.com可能不是同一个域名，访问到的网站也可能不同。</li>
+</ul>
+
+<h2 id="其他知识点">其他知识点</h2>
+
+<ul>
+<li>锚点的内容不会传至服务器上</li>
+<li>利用curl命令发送HTTP请求</li>
+<li>URL在我理解就是相当于我们现实生活中的定位，我可以通过这个地址找到你或者其他的。
+<br /></li>
+</ul>
+
+<h2 id="加油-后续有相关想法和内容还会一直更新-keep-going">加油&mdash; 后续有相关想法和内容还会一直更新，keep going！</h2>
+
+<p>谢谢观看😄😄😄</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zheng-en.xyz/" >
+    &copy; 2019 郑李建的个人博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
