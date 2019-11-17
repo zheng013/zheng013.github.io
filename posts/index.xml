@@ -6,10 +6,21 @@
     <description>Recent content in Posts on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 16 Nov 2019 19:40:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Nov 2019 09:42:01 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>浅谈JavaScript</title>
+      <link>https://zheng-en.xyz/posts/%E6%B5%85%E8%B0%88javascript/</link>
+      <pubDate>Sun, 17 Nov 2019 09:42:01 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/%E6%B5%85%E8%B0%88javascript/</guid>
+      <description>浅谈JavaScript 早期  94年，网景公司发布了当时世界比较成熟的一个网站，但其只能用来浏览，不具备与访问者互动的能力。 因此急需一种网页脚本语言，可以使得浏览器可以互动。 两个方向：一个是利用现有的语言资源（python、TCL等）推广简单，另一个是自己开发一个完全适应的全新语言。 当时网景和sun公司联合推进了这项语言的诞生。 布莱登在依据公司要求未来的网页脚本语言需看上去与Java有联系或相似，但比其简单的要求。 仅仅在十天后布莱登就将其原型设计出来了，并在浏览器上大获成功。 JavaScript语言实际上是两种语言风格的混合产物（简化的函数式编程+简化的面向对象编程）  发展  微软公司在JavaScript推出不久后，也推出了JScript。 JScript也是一种JavaScript实现，这两个JavaScript语言版本在浏览器端共存意味着语言标准化的缺失。 96年，网景公司正式向ECMA提交语言标准。 97年，ECMA以JavaScript语言为基础制定了ECMAScript标准规范ECMA-262。JavaScript成为了ECMAScript最著名的实现之一。  现状  随着chrome浏览器的发展壮大，ie的衰落，JavaScript得以快速发展，前端技术也越来越多。 JavaScript是一门基于原型、函数先行的语言，是一门多范式的语言，它支持面向对象编程，命令式编程，以及函数式编程。 由于设计时间的仓促等相关原因，JavaScript的语言设计存在很多的缺陷和严谨，正是因为这样才造就他的灵活性。 Javascript目前是网页编程的唯一语言，只要互联网继续发展，它就必然一起发展。 node.js使得Javascript可以用于后端的服务器编程。 coffeeScript使你可以用python和ruby的语法，撰写Javascript。 要发布新版本的语言标准，就可以弥补这些设计缺陷。如ES6等后续最新的版本 虽然标准的发布和标准的实现是两回事，但是JavaScript一定会日益强壮。  JavaScript的语言缺陷和严谨性只有自己使用了才知道，世界上哪有完美的东西。但他现在就是最适合网页编程的语言，所以从另一个角度说他也是最好的。 编程语言的坑只有实际通过项目编写才能遇到，我之后会将他们归类总结，以便更高效的编写。
+加油！ 已经开始学习一门语言了，要多下功夫把他学会了。 加油 加油💪💪💪
+谢谢观看🏀😄🏀😄🏀😄</description>
+    </item>
     
     <item>
       <title>浅析URL</title>
