@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>郑李建的个人博客  | 内存图和JS世界</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="内存图和JS世界" />
+<meta property="og:description" content="内存图与JS世界 JS引擎（V8）  JS是单线程 编译：将JS代码翻译成机器能执行的字节码或机器码 优化：改写代码，使其更为高效 执行：执行上面的字节码或机器码 垃圾回收：把JS用完的内存回收，方便之后再次使用 JS代码在内存里运行  内存图 * stack区中的数据按顺序存放 * Heap区中的数据随机存放 * 数据分为两种：对象和非对象 * 非对象一般存放于stack区 * 对象存在Heap区（数据、函数也是对象）
+JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏属性，指向原型（函数、数组也是一个对象）
+课后作业 JS的其他相关的基础知识都总结在笔记本上&mdash;&mdash; 以后用到JS语言写代码，都会将心得和想法持续更新，这样知识才会记得更牢💪💪💪
+谢谢观看🤭🤭🤭 加油&mdash;&mdash;&mdash;&ndash;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zheng-en.xyz/posts/%E5%86%85%E5%AD%98%E5%9B%BE%E5%92%8Cjs%E4%B8%96%E7%95%8C/" />
+<meta property="article:published_time" content="2019-11-17T18:55:32+08:00" />
+<meta property="article:modified_time" content="2019-11-17T18:55:32+08:00" />
+<meta itemprop="name" content="内存图和JS世界">
+<meta itemprop="description" content="内存图与JS世界 JS引擎（V8）  JS是单线程 编译：将JS代码翻译成机器能执行的字节码或机器码 优化：改写代码，使其更为高效 执行：执行上面的字节码或机器码 垃圾回收：把JS用完的内存回收，方便之后再次使用 JS代码在内存里运行  内存图 * stack区中的数据按顺序存放 * Heap区中的数据随机存放 * 数据分为两种：对象和非对象 * 非对象一般存放于stack区 * 对象存在Heap区（数据、函数也是对象）
+JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏属性，指向原型（函数、数组也是一个对象）
+课后作业 JS的其他相关的基础知识都总结在笔记本上&mdash;&mdash; 以后用到JS语言写代码，都会将心得和想法持续更新，这样知识才会记得更牢💪💪💪
+谢谢观看🤭🤭🤭 加油&mdash;&mdash;&mdash;&ndash;">
+
+
+<meta itemprop="datePublished" content="2019-11-17T18:55:32&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-17T18:55:32&#43;08:00" />
+<meta itemprop="wordCount" content="29">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="内存图和JS世界"/>
+<meta name="twitter:description" content="内存图与JS世界 JS引擎（V8）  JS是单线程 编译：将JS代码翻译成机器能执行的字节码或机器码 优化：改写代码，使其更为高效 执行：执行上面的字节码或机器码 垃圾回收：把JS用完的内存回收，方便之后再次使用 JS代码在内存里运行  内存图 * stack区中的数据按顺序存放 * Heap区中的数据随机存放 * 数据分为两种：对象和非对象 * 非对象一般存放于stack区 * 对象存在Heap区（数据、函数也是对象）
+JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏属性，指向原型（函数、数组也是一个对象）
+课后作业 JS的其他相关的基础知识都总结在笔记本上&mdash;&mdash; 以后用到JS语言写代码，都会将心得和想法持续更新，这样知识才会记得更牢💪💪💪
+谢谢观看🤭🤭🤭 加油&mdash;&mdash;&mdash;&ndash;"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://zheng-en.xyz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      郑李建的个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">内存图和JS世界</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-11-17T18:55:32&#43;08:00">November 17, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="内存图与js世界">内存图与JS世界</h1>
+
+<h2 id="js引擎-v8">JS引擎（V8）</h2>
+
+<ul>
+<li>JS是单线程</li>
+<li>编译：将JS代码翻译成机器能执行的字节码或机器码</li>
+<li>优化：改写代码，使其更为高效</li>
+<li>执行：执行上面的字节码或机器码</li>
+<li>垃圾回收：把JS用完的内存回收，方便之后再次使用</li>
+<li>JS代码在内存里运行</li>
+</ul>
+
+<h2 id="内存图">内存图</h2>
+
+<p><img src="/images/内存图.png" alt="内存图" />
+* stack区中的数据按顺序存放
+* Heap区中的数据随机存放
+* 数据分为两种：对象和非对象
+* 非对象一般存放于stack区
+* 对象存在Heap区（数据、函数也是对象）</p>
+
+<h2 id="js世界">JS世界</h2>
+
+<p><img src="/images/js世界.png" alt="js世界" />
+* 对象的共有属性就是原型
+* 每一个对象都有一个隐藏属性，指向原型（函数、数组也是一个对象）</p>
+
+<h2 id="课后作业">课后作业</h2>
+
+<p><img src="/images/JS关系图.jpg" alt="作业" /></p>
+
+<h3 id="js的其他相关的基础知识都总结在笔记本上">JS的其他相关的基础知识都总结在笔记本上&mdash;&mdash;</h3>
+
+<p>以后用到JS语言写代码，都会将心得和想法持续更新，这样知识才会记得更牢💪💪💪</p>
+
+<p>谢谢观看🤭🤭🤭    加油&mdash;&mdash;&mdash;&ndash;</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zheng-en.xyz/" >
+    &copy; 2019 郑李建的个人博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

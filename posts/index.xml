@@ -6,10 +6,22 @@
     <description>Recent content in Posts on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 17 Nov 2019 09:42:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Nov 2019 18:55:32 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>内存图和JS世界</title>
+      <link>https://zheng-en.xyz/posts/%E5%86%85%E5%AD%98%E5%9B%BE%E5%92%8Cjs%E4%B8%96%E7%95%8C/</link>
+      <pubDate>Sun, 17 Nov 2019 18:55:32 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/%E5%86%85%E5%AD%98%E5%9B%BE%E5%92%8Cjs%E4%B8%96%E7%95%8C/</guid>
+      <description>内存图与JS世界 JS引擎（V8）  JS是单线程 编译：将JS代码翻译成机器能执行的字节码或机器码 优化：改写代码，使其更为高效 执行：执行上面的字节码或机器码 垃圾回收：把JS用完的内存回收，方便之后再次使用 JS代码在内存里运行  内存图 * stack区中的数据按顺序存放 * Heap区中的数据随机存放 * 数据分为两种：对象和非对象 * 非对象一般存放于stack区 * 对象存在Heap区（数据、函数也是对象）
+JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏属性，指向原型（函数、数组也是一个对象）
+课后作业 JS的其他相关的基础知识都总结在笔记本上&amp;mdash;&amp;mdash; 以后用到JS语言写代码，都会将心得和想法持续更新，这样知识才会记得更牢💪💪💪
+谢谢观看🤭🤭🤭 加油&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;</description>
+    </item>
     
     <item>
       <title>浅谈JavaScript</title>

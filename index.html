@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/" />
 
-<meta property="og:updated_time" content="2019-11-17T09:42:01+08:00" />
+<meta property="og:updated_time" content="2019-11-17T18:55:32+08:00" />
 <meta itemprop="name" content="郑李建的个人博客">
 <meta itemprop="description" content="">
 
@@ -122,6 +122,33 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://zheng-en.xyz/posts/%E5%86%85%E5%AD%98%E5%9B%BE%E5%92%8Cjs%E4%B8%96%E7%95%8C/" class="color-inherit dim link">
+            内存图和JS世界
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          内存图与JS世界 JS引擎（V8）  JS是单线程 编译：将JS代码翻译成机器能执行的字节码或机器码 优化：改写代码，使其更为高效 执行：执行上面的字节码或机器码 垃圾回收：把JS用完的内存回收，方便之后再次使用 JS代码在内存里运行  内存图 * stack区中的数据按顺序存放 * Heap区中的数据随机存放 * 数据分为两种：对象和非对象 * 非对象一般存放于stack区 * 对象存在Heap区（数据、函数也是对象）
+JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏属性，指向原型（函数、数组也是一个对象）
+课后作业 JS的其他相关的基础知识都总结在笔记本上&mdash;&mdash; 以后用到JS语言写代码，都会将心得和想法持续更新，这样知识才会记得更牢💪💪💪
+谢谢观看🤭🤭🤭 加油&mdash;&mdash;&mdash;&ndash;
+        </div>
+          <a href="https://zheng-en.xyz/posts/%E5%86%85%E5%AD%98%E5%9B%BE%E5%92%8Cjs%E4%B8%96%E7%95%8C/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://zheng-en.xyz/posts/%E6%B5%85%E8%B0%88javascript/" class="color-inherit dim link">
             浅谈JavaScript
             </a>
@@ -164,40 +191,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://zheng-en.xyz/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
-            CSS知识总结
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          CSS知识总结 浏览器渲染原理  根据HTML构建HTML树（DOM） 根据CSS构建CSS树（CSSOM） 将两颗树合并成一颗渲染树（reader.tree） Layout布局（文档流、盒模型、计算大小和位置） Paint绘制（把边框颜色、文字颜色、阴影等样式画出来） Compose合成（根据层叠关系展示画面） 可利用chrome等浏览器开发者工具中Timelie-Paint-Layer查看优化（绘制分析器）   CSS 动画的两种做法 transition（过渡）  补充中间帧，实现动画效果 transition:属性名|时长|过渡方式|延迟 截取部分代码
-#heart{ display: inline-block; margin: 100px; position: relative; transition: all 1s; } #heart:hover{ transform: scale(1.2); }  过渡需要有起始（如hover和非hover状态）
- 让动画停留在最后一帧，在其声明上加上forward
-  animation（动画）  声明关键帧，添加动画 配合@keyframe实现动画
-#heart{ display: inline-block; margin: 100px; position: relative; animation: .5s heart infinite alternate-reverse; } @keyframes heart { 0%{ transform: scale(1); } 100%{ transform: scale(1.2); } } /*利用百分比控制范围*/ /*利用from to控制*/ {from{ transform:translateX(0%); } to{ transform:translateX(100%); } }  animation: 时长|过渡方式|延迟|次数|方向|填充模式|是否暂停|动画名
-        </div>
-          <a href="https://zheng-en.xyz/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://zheng-en.xyz/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
+              CSS知识总结
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://zheng-en.xyz/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%AE%80%E8%BF%B0/" class="link black dim">
@@ -214,12 +219,6 @@
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://zheng-en.xyz/posts/html%E5%85%A5%E9%97%A8%E5%8D%9A%E5%AE%A2bad11.08/" class="link black dim">
               HTML入门博客
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github.pages%E9%A2%84%E8%A7%88%E9%A1%B5%E9%9D%A2/" class="link black dim">
-              如何使用GitHub
             </a>
           </h2>
         
