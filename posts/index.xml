@@ -6,10 +6,26 @@
     <description>Recent content in Posts on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 17 Nov 2019 18:55:32 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Nov 2019 19:23:07 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS语法</title>
+      <link>https://zheng-en.xyz/posts/js%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 20 Nov 2019 19:23:07 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/js%E8%AF%AD%E6%B3%95/</guid>
+      <description>JS的基本语法 什么是表达式和语句  表达式是为了得到返回值（表达式的值是函数本身，表达式的值为函数的返回值，但这里的值不包括undefined） 语句是为了完成某种任务而进行的操作 表达式和语句的区别在于：语句是为了进行某种操作，一般情况下不需要返回值，而表达式都是为了得到返回值，一定会返回一个值。
+var a = 1+3;  这就是一个语句，而1+3是一个表达式
+  标识符的规则（不符合规则的就是非法标识符，系统就会报错）  标识符（identifier）：指的是用来识别各种值的合法名称 最常见的标识符就是变量名，以及后面要提到的函数名。 JS语言中对大小写敏感，故a和A是两个不同的标识符。 第一个字符，可以是任意Unicode的字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个以及后面的字符，除了第一个字符提到的之外，还可以是数字（0到9） 不合规则的标识符
+2f //第一个字符不能是数字 23 //同上 **** //标识符不能含有*号 a+b //表示标识符不能含有加号 -f //标识符不能含有减号或连词线  中文是合法的标识符，也可做变量名。
+  if else 语句  if(表达式){语句一}else{语句二} （一般{}不建议省略）
+if(m===3){ //布尔值为ture，执行该代码块语句 } else{ //布尔值为false，执行该代码块语句 }  对同一个变量进行多次判断时，多个if&amp;hellip;else语句可以连写在一起。
+if(m===0){ //.... }else if(m===1){ //.... }else if(m===2){ //... }else { //... }  else代码块总是与离自己最近的那个if语句配对
+var m = 1; var n = 2 ; if(m!</description>
+    </item>
     
     <item>
       <title>内存图和JS世界</title>

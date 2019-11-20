@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zheng-en.xyz/posts/</loc>
-    <lastmod>2019-11-17T18:55:32+08:00</lastmod>
+    <loc>https://zheng-en.xyz/posts/js%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2019-11-20T19:23:07+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zheng-en.xyz/posts/%E5%86%85%E5%AD%98%E5%9B%BE%E5%92%8Cjs%E4%B8%96%E7%95%8C/</loc>
-    <lastmod>2019-11-17T18:55:32+08:00</lastmod>
+    <loc>https://zheng-en.xyz/posts/</loc>
+    <lastmod>2019-11-20T19:23:07+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://zheng-en.xyz/</loc>
+    <lastmod>2019-11-20T19:23:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zheng-en.xyz/posts/%E5%86%85%E5%AD%98%E5%9B%BE%E5%92%8Cjs%E4%B8%96%E7%95%8C/</loc>
     <lastmod>2019-11-17T18:55:32+08:00</lastmod>
   </url>
   
