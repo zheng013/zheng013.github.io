@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/posts/" />
 
-<meta property="og:updated_time" content="2019-11-20T19:23:07+08:00" />
+<meta property="og:updated_time" content="2019-11-21T19:49:01+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -91,6 +91,22 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://zheng-en.xyz/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
+        JS对象的基本用法
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      JS对象的基本用法 声明对象的两种语法 let obj = { 'name' : 'paul' , 'age' : '22' } //简单通用流行的写法 let obj = new Object({ 'name':'George' , 'age': '32' }) //标准官方的写法  如何删除对象的属性 delete obj['name'] //推荐新手常用的删除的方法 delete obj.name //熟悉了解之后可用  如何查看对象的属性 Object.keys(obj) // 查看对象的所有属性（包括隐藏属性） console.dir（obj）//查看打印出对象的所有属性（包括隐藏属性） obj.hasOwnProperty('name') //判断该属性是否为自身的属性 obj.name obj['name'] //查看某个对象的具体的属性 Object.values(obj) //查看对象的所有属性值 Object.entries（obj） //查看对象所有属性和属性值  如何修改或增加对象的属性（写属性）  直接赋值
+let obj = { name: 'frank'} //name是字符串 obj.name='jack' //name是字符串 obj['name']='paul' obj[name] = 'frank' // 错误，因为name变量值不确定 obj['na'+'me']='frank' let key ='name',obj[key]='frank' let key ='name',obj.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -268,34 +284,6 @@ JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏
  在左上角找到新建仓库,点击创建. 自定义仓库名称（无需做任何选项的操作）,确定仓库的创建.   进入新建的repo仓库,在右边tab中找到settings
  点击进入settings选项,下滑找到GitHub Pages栏进行设置选择. 在source选项一栏中下拉选择master branch,然后点击save. 你会在GitHub栏看到一个自动生成的预览页面网址,就成功了.   想要预览html页面
  将你需要预览展示的html页面文件加入新建的repo中. 在生成的预览网址后面加上想访问的html路径名称即预览. （例：我的html路径名称为git-demo-1/index.html,则可以访问http://zheng-en.xyz/git-demo-1/index.html.)    大公告成！😁😁😁 谢谢观看！
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
-        如何用hugo搭建个人博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Hugo制作博客步骤  下载Hugo (windows)
-windows安装地址
- 解压并运行
- 将解压后的hugo.exe文件放入某盘下的software\hugo\hugo.exe中
- 将hugo.exe的文件路径添加至（我的电脑&gt;属性&gt;高级系统设置&gt;环境变量）中的path选项中
- 打开cmder，运行hugo server ，确认是否正常运行。
-  选择一个空目录建立网站目录
- 登录Hugo,点击quick start，跟随网页的引导步骤建立站点。
- 最终运行hugo之后，得到一个public的目录生成，标志你的博客站点已经建立成功。
-  将个人博客推到网上
- 在你的网站目录里生成一个.gitignore的文件，将public目录写进里面。
- 在进入public目录进行初始化仓库，将网页blog内容上传至github，生成博客站点网址。
-cd public git init git add git commit -v git remote add origin (github的仓库地址) git push -u origin master  之后想更新博客内容，可以在重新新建一个md文件进行编写。（要记得每次更新完内容之后记得hugo）
-hugo new posts/我的第二篇博客.md hugo ga gc git push  这样就完成了利用hugo生成博客，我还可以随时更新博客内容。是不是很方便呢，可以记录我们的笔记、想法、和有趣的事情，赶紧行动起来去建立一个属于你个人的博客！   c😁😁😁 Thanks For Watching ！ (可标题点击进入查看)🐶
     </div>
   </div>
 </div>

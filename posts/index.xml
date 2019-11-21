@@ -6,10 +6,20 @@
     <description>Recent content in Posts on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 20 Nov 2019 19:23:07 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2019 19:49:01 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS对象的基本用法</title>
+      <link>https://zheng-en.xyz/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 21 Nov 2019 19:49:01 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
+      <description>JS对象的基本用法 声明对象的两种语法 let obj = { &#39;name&#39; : &#39;paul&#39; , &#39;age&#39; : &#39;22&#39; } //简单通用流行的写法 let obj = new Object({ &#39;name&#39;:&#39;George&#39; , &#39;age&#39;: &#39;32&#39; }) //标准官方的写法  如何删除对象的属性 delete obj[&#39;name&#39;] //推荐新手常用的删除的方法 delete obj.name //熟悉了解之后可用  如何查看对象的属性 Object.keys(obj) // 查看对象的所有属性（包括隐藏属性） console.dir（obj）//查看打印出对象的所有属性（包括隐藏属性） obj.hasOwnProperty(&#39;name&#39;) //判断该属性是否为自身的属性 obj.name obj[&#39;name&#39;] //查看某个对象的具体的属性 Object.values(obj) //查看对象的所有属性值 Object.entries（obj） //查看对象所有属性和属性值  如何修改或增加对象的属性（写属性）  直接赋值
+let obj = { name: &#39;frank&#39;} //name是字符串 obj.name=&#39;jack&#39; //name是字符串 obj[&#39;name&#39;]=&#39;paul&#39; obj[name] = &#39;frank&#39; // 错误，因为name变量值不确定 obj[&#39;na&#39;+&#39;me&#39;]=&#39;frank&#39; let key =&#39;name&#39;,obj[key]=&#39;frank&#39; let key =&#39;name&#39;,obj.</description>
+    </item>
     
     <item>
       <title>JS语法</title>
