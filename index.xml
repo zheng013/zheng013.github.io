@@ -6,10 +6,21 @@
     <description>Recent content on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 21 Nov 2019 19:49:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 24 Nov 2019 09:34:39 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Js函数的执行时机浅析</title>
+      <link>https://zheng-en.xyz/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA%E6%B5%85%E6%9E%90/</link>
+      <pubDate>Sun, 24 Nov 2019 09:34:39 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA%E6%B5%85%E6%9E%90/</guid>
+      <description>JS函数的执行时机浅析  首先来看一下下面这段代码
+let i = 0 for(i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }  执行之后我们会发现打印出6个6，这是为什么呢？我自己搜索了一些资料，但是理解的也不是很深，因为涉及到作用与、闭包和事件循环的知识（但自己能想明白）。也是说：for循环时setTimeout()不是立即执行的，它们的回调被push到了宏任务队列当中，而在执行任务队列里的回调函数时，变量i早已变成了6。把他当做调用栈，但for执行完后，在进行回调函数执行。那其中原理就有点清晰了，我们只需要在回调函数push到队列的时候创建一个作用域的变量，他执行的时候也就会按照当时的情况去找变量，也就是很简单，就是需要给循环中的setTimeout()创建一个闭包作用域，让它执行的时候找到的变量i是正确的。 那如何让上面代码打印 0、1、2、3、4、5
+  利用let关键字 for(let i = 0;i&amp;lt;6;i++) { setTimeout(()=&amp;gt;{ console.log(i); }, 0); }  利用setTimeout第三个参数,把每次循环的值传给他 let i = 0 for(i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0,i) }  把setTimeout用一个方法单独出来形成闭包 let loop=function(i){ setTimeout(()=&amp;gt; { console.log(i); },0 ); }; for (let i = 0;i &amp;lt;6; i++) { loop(i) }  引入IIFE(立即执行函数相关，作用域) for(var i = 0;i&amp;lt;6;i ++) { (function(i){ setTimeout(() =&amp;gt; { console.</description>
+    </item>
     
     <item>
       <title>JS对象的基本用法</title>

@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/posts/" />
 
-<meta property="og:updated_time" content="2019-11-21T19:49:01+08:00" />
+<meta property="og:updated_time" content="2019-11-24T09:34:39+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -91,6 +91,23 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://zheng-en.xyz/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA%E6%B5%85%E6%9E%90/" class="link black dim">
+        Js函数的执行时机浅析
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      JS函数的执行时机浅析  首先来看一下下面这段代码
+let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) }  执行之后我们会发现打印出6个6，这是为什么呢？我自己搜索了一些资料，但是理解的也不是很深，因为涉及到作用与、闭包和事件循环的知识（但自己能想明白）。也是说：for循环时setTimeout()不是立即执行的，它们的回调被push到了宏任务队列当中，而在执行任务队列里的回调函数时，变量i早已变成了6。把他当做调用栈，但for执行完后，在进行回调函数执行。那其中原理就有点清晰了，我们只需要在回调函数push到队列的时候创建一个作用域的变量，他执行的时候也就会按照当时的情况去找变量，也就是很简单，就是需要给循环中的setTimeout()创建一个闭包作用域，让它执行的时候找到的变量i是正确的。 那如何让上面代码打印 0、1、2、3、4、5
+  利用let关键字 for(let i = 0;i&lt;6;i++) { setTimeout(()=&gt;{ console.log(i); }, 0); }  利用setTimeout第三个参数,把每次循环的值传给他 let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0,i) }  把setTimeout用一个方法单独出来形成闭包 let loop=function(i){ setTimeout(()=&gt; { console.log(i); },0 ); }; for (let i = 0;i &lt;6; i++) { loop(i) }  引入IIFE(立即执行函数相关，作用域) for(var i = 0;i&lt;6;i ++) { (function(i){ setTimeout(() =&gt; { console.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -266,24 +283,6 @@ JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏
  找页面仿写,记忆遗忘曲线—要多写，多改。
  知识五(体系化学习-学习一门语言)
  语法(大小写有区别吗 要加引号吗 如何注释(CTRL+/） 如何组合）
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://zheng-en.xyz/posts/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8github.pages%E9%A2%84%E8%A7%88%E9%A1%B5%E9%9D%A2/" class="link black dim">
-        如何使用GitHub
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      如何使用GitHub.pages预览页面  登入Github,新建repo仓库
- 在左上角找到新建仓库,点击创建. 自定义仓库名称（无需做任何选项的操作）,确定仓库的创建.   进入新建的repo仓库,在右边tab中找到settings
- 点击进入settings选项,下滑找到GitHub Pages栏进行设置选择. 在source选项一栏中下拉选择master branch,然后点击save. 你会在GitHub栏看到一个自动生成的预览页面网址,就成功了.   想要预览html页面
- 将你需要预览展示的html页面文件加入新建的repo中. 在生成的预览网址后面加上想访问的html路径名称即预览. （例：我的html路径名称为git-demo-1/index.html,则可以访问http://zheng-en.xyz/git-demo-1/index.html.)    大公告成！😁😁😁 谢谢观看！
     </div>
   </div>
 </div>
