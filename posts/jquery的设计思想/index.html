@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>郑李建的个人博客  | jQuery的设计思想</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="jQuery的设计思想" />
+<meta property="og:description" content="jQuery如何获取元素 jQuery的基本设计思想和主要用法，就是选择某个网页元素，然后对其进行某种操作。  CSS选择器
+$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myId的网页元素 $(&#39;div.myClass&#39;) // 选择class为myClass的div元素 $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素  jQuery的特有表达式
+$(&#39;a:first&#39;) //选择网页中第一个a元素 $(&#39;tr:odd&#39;) //选择表格的奇数行 $(&#39;#myForm :input&#39;) // 选择表单中的input元素 $(&#39;div:visible&#39;) //选择可见的div元素 $(&#39;div:gt(2)&#39;) // 选择所有的div元素，除了前三个 $(&#39;div:animated&#39;) // 选择当前处于动画状态的div元素   jQuery的链式操作是怎样的  jQuery设计思想之三，就是最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。 这是jQuery最令人称道、最方便的特点。它的原理在于每一步的jQuery操作，返回的都是一个jQuery对象，所以不同操作可以连在一起。 例
+$(&#39;div&#39;).find(&#39;h3&#39;).eq(2).html(&#39;Hello&#39;)  分解之后
+$(&#39;div&#39;) //找到div元素 .find(&#39;h3&#39;) //选择其中的h3元素 .eq(2) //选择第3个h3元素 .html(&#39;Hello&#39;); //将它的内容改为Hello  jQuery还提供了.end()方法，使得结果集可以后退一步
+$(&#39;div&#39;) .find(&#39;h3&#39;) .eq(2) .html(&#39;Hello&#39;) .end() //退回到选中所有的h3元素的那一步 .eq(0) //选中第一个h3元素 .html(&#39;World&#39;); //将它的内容改为World  jQuery 如何创建元素 创建新元素的方法非常简单，只要把新元素直接传入jQuery的构造函数就行了
+$(&#39;&lt;p&gt;Hello&lt;/p&gt;&#39;); $(&#39;&lt;li class=&quot;new&quot;&gt;new list item&lt;/li&gt;&#39;); $(&#39;ul&#39;)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zheng-en.xyz/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/" />
+<meta property="article:published_time" content="2019-12-01T23:12:49+08:00" />
+<meta property="article:modified_time" content="2019-12-01T23:12:49+08:00" />
+<meta itemprop="name" content="jQuery的设计思想">
+<meta itemprop="description" content="jQuery如何获取元素 jQuery的基本设计思想和主要用法，就是选择某个网页元素，然后对其进行某种操作。  CSS选择器
+$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myId的网页元素 $(&#39;div.myClass&#39;) // 选择class为myClass的div元素 $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素  jQuery的特有表达式
+$(&#39;a:first&#39;) //选择网页中第一个a元素 $(&#39;tr:odd&#39;) //选择表格的奇数行 $(&#39;#myForm :input&#39;) // 选择表单中的input元素 $(&#39;div:visible&#39;) //选择可见的div元素 $(&#39;div:gt(2)&#39;) // 选择所有的div元素，除了前三个 $(&#39;div:animated&#39;) // 选择当前处于动画状态的div元素   jQuery的链式操作是怎样的  jQuery设计思想之三，就是最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。 这是jQuery最令人称道、最方便的特点。它的原理在于每一步的jQuery操作，返回的都是一个jQuery对象，所以不同操作可以连在一起。 例
+$(&#39;div&#39;).find(&#39;h3&#39;).eq(2).html(&#39;Hello&#39;)  分解之后
+$(&#39;div&#39;) //找到div元素 .find(&#39;h3&#39;) //选择其中的h3元素 .eq(2) //选择第3个h3元素 .html(&#39;Hello&#39;); //将它的内容改为Hello  jQuery还提供了.end()方法，使得结果集可以后退一步
+$(&#39;div&#39;) .find(&#39;h3&#39;) .eq(2) .html(&#39;Hello&#39;) .end() //退回到选中所有的h3元素的那一步 .eq(0) //选中第一个h3元素 .html(&#39;World&#39;); //将它的内容改为World  jQuery 如何创建元素 创建新元素的方法非常简单，只要把新元素直接传入jQuery的构造函数就行了
+$(&#39;&lt;p&gt;Hello&lt;/p&gt;&#39;); $(&#39;&lt;li class=&quot;new&quot;&gt;new list item&lt;/li&gt;&#39;); $(&#39;ul&#39;).">
+
+
+<meta itemprop="datePublished" content="2019-12-01T23:12:49&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-01T23:12:49&#43;08:00" />
+<meta itemprop="wordCount" content="100">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="jQuery的设计思想"/>
+<meta name="twitter:description" content="jQuery如何获取元素 jQuery的基本设计思想和主要用法，就是选择某个网页元素，然后对其进行某种操作。  CSS选择器
+$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myId的网页元素 $(&#39;div.myClass&#39;) // 选择class为myClass的div元素 $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素  jQuery的特有表达式
+$(&#39;a:first&#39;) //选择网页中第一个a元素 $(&#39;tr:odd&#39;) //选择表格的奇数行 $(&#39;#myForm :input&#39;) // 选择表单中的input元素 $(&#39;div:visible&#39;) //选择可见的div元素 $(&#39;div:gt(2)&#39;) // 选择所有的div元素，除了前三个 $(&#39;div:animated&#39;) // 选择当前处于动画状态的div元素   jQuery的链式操作是怎样的  jQuery设计思想之三，就是最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。 这是jQuery最令人称道、最方便的特点。它的原理在于每一步的jQuery操作，返回的都是一个jQuery对象，所以不同操作可以连在一起。 例
+$(&#39;div&#39;).find(&#39;h3&#39;).eq(2).html(&#39;Hello&#39;)  分解之后
+$(&#39;div&#39;) //找到div元素 .find(&#39;h3&#39;) //选择其中的h3元素 .eq(2) //选择第3个h3元素 .html(&#39;Hello&#39;); //将它的内容改为Hello  jQuery还提供了.end()方法，使得结果集可以后退一步
+$(&#39;div&#39;) .find(&#39;h3&#39;) .eq(2) .html(&#39;Hello&#39;) .end() //退回到选中所有的h3元素的那一步 .eq(0) //选中第一个h3元素 .html(&#39;World&#39;); //将它的内容改为World  jQuery 如何创建元素 创建新元素的方法非常简单，只要把新元素直接传入jQuery的构造函数就行了
+$(&#39;&lt;p&gt;Hello&lt;/p&gt;&#39;); $(&#39;&lt;li class=&quot;new&quot;&gt;new list item&lt;/li&gt;&#39;); $(&#39;ul&#39;)."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://zheng-en.xyz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      郑李建的个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">jQuery的设计思想</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-12-01T23:12:49&#43;08:00">December 1, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="jquery如何获取元素">jQuery如何获取元素</h2>
+
+<h3 id="jquery的基本设计思想和主要用法-就是选择某个网页元素-然后对其进行某种操作">jQuery的基本设计思想和主要用法，就是选择某个网页元素，然后对其进行某种操作。</h3>
+
+<ul>
+<li><p>CSS选择器</p>
+
+<pre><code class="language-(javascript)">$(document) //选择整个文档对象
+
+$('#myId') //选择ID为myId的网页元素
+
+$('div.myClass') // 选择class为myClass的div元素
+
+$('input[name=first]') // 选择name属性等于first的input元素
+</code></pre></li>
+
+<li><p>jQuery的特有表达式</p>
+
+<pre><code class="language-(javascript)">$('a:first') //选择网页中第一个a元素
+
+$('tr:odd') //选择表格的奇数行
+
+$('#myForm :input') // 选择表单中的input元素
+
+$('div:visible') //选择可见的div元素
+
+$('div:gt(2)') // 选择所有的div元素，除了前三个
+
+$('div:animated') // 选择当前处于动画状态的div元素
+</code></pre></li>
+</ul>
+
+<h2 id="jquery的链式操作是怎样的">jQuery的链式操作是怎样的</h2>
+
+<ul>
+<li>jQuery设计思想之三，就是最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。</li>
+<li>这是jQuery最令人称道、最方便的特点。它的原理在于每一步的jQuery操作，返回的都是一个jQuery对象，所以不同操作可以连在一起。</li>
+
+<li><p>例</p>
+
+<pre><code class="language-(javascript)">$('div').find('h3').eq(2).html('Hello')
+</code></pre></li>
+
+<li><p>分解之后</p>
+
+<pre><code class="language-(javascript)">$('div') //找到div元素
+.find('h3') //选择其中的h3元素
+.eq(2) //选择第3个h3元素
+.html('Hello'); //将它的内容改为Hello
+</code></pre></li>
+
+<li><p>jQuery还提供了.end()方法，使得结果集可以后退一步</p>
+
+<pre><code class="language-(javascript)">$('div') 
+.find('h3')
+.eq(2)
+.html('Hello')
+.end() //退回到选中所有的h3元素的那一步
+.eq(0) //选中第一个h3元素
+.html('World'); //将它的内容改为World
+</code></pre>
+
+<h2 id="jquery-如何创建元素">jQuery 如何创建元素</h2></li>
+
+<li><p>创建新元素的方法非常简单，只要把新元素直接传入jQuery的构造函数就行了</p>
+
+<pre><code class="language-(javascript)">$('&lt;p&gt;Hello&lt;/p&gt;');
+$('&lt;li class=&quot;new&quot;&gt;new list item&lt;/li&gt;');
+$('ul').append('&lt;li&gt;list item&lt;/li&gt;');
+</code></pre>
+
+<h2 id="jquery-如何移动元素">jQuery 如何移动元素</h2></li>
+
+<li><p>第一种方法是使用.insertAfter()，把div元素移动p元素后面</p>
+
+<pre><code class="language-(javascript)">$('div').insertAfter($('p'));
+</code></pre></li>
+
+<li><p>第二种方法是使用.after()，把p元素加到div元素前面</p>
+
+<pre><code class="language-(javascript)">$('p').after($('div'));
+</code></pre></li>
+
+<li><p>表面上看，这两种方法的效果是一样的，唯一的不同似乎只是操作视角的不同。但是实际上，它们有一个重大差别，那就是返回的元素不一样。第一种方法返回div元素，第二种方法返回p元素。你可以根据需要，选择到底使用哪一种方法。(四对方式)</p>
+
+<pre><code class="language-(javascript)">.insertAfter()和.after()：在现存元素的外部，从后面插入元素
+.insertBefore()和.before()：在现存元素的外部，从前面插入元素
+.appendTo()和.append()：在现存元素的内部，从后面插入元素
+.prependTo()和.prepend()：在现存元素的内部，从前面插入元素
+</code></pre>
+
+<h2 id="jquery-如何修改元素的属性">jQuery 如何修改元素的属性</h2></li>
+
+<li><p>jQuery设计思想之四，就是使用同一个函数，来完成取值（getter）和赋值（setter），即&rdquo;取值器&rdquo;与&rdquo;赋值器&rdquo;合一。到底是取值还是赋值，由函数的参数决定。（重载）</p>
+
+<pre><code class="language-(javascript)">$('h1').html(); //html()没有参数，表示取出h1的值
+$('h1').html('Hello'); //html()有参数Hello，表示对h1进行赋值
+</code></pre></li>
+
+<li><p>常见的取值和赋值函数</p>
+
+<pre><code class="language-(javascript)">.html() 取出或设置html内容
+.text() 取出或设置text内容
+.attr() 取出或设置某个属性的值
+.width() 取出或设置某个元素的宽度
+.height() 取出或设置某个元素的高度
+.val() 取出某个表单元素的值
+</code></pre></li>
+
+<li><p>注意：如果结果集包含多个元素，那么赋值的时候，将对其中所有的元素赋值；取值的时候，则是只取出第一个元素的值（.text()例外，它取出所有元素的text内容）。***</p></li>
+</ul>
+
+<p>时间转眼已经过了一个月了，这段时间感觉又回到学生时期的学习时候的感觉了。希望自己能够不断保持这样的精神，将基础能够打牢。希望自己能不辜负自己的期望。 加油啊！！！👣👣👣</p>
+
+<h3 id="谢谢观看">谢谢观看</h3>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zheng-en.xyz/" >
+    &copy; 2019 郑李建的个人博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

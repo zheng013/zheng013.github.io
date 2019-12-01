@@ -6,10 +6,25 @@
     <description>Recent content in Posts on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 24 Nov 2019 09:34:39 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Dec 2019 23:12:49 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jQuery的设计思想</title>
+      <link>https://zheng-en.xyz/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/</link>
+      <pubDate>Sun, 01 Dec 2019 23:12:49 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/</guid>
+      <description>jQuery如何获取元素 jQuery的基本设计思想和主要用法，就是选择某个网页元素，然后对其进行某种操作。  CSS选择器
+$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myId的网页元素 $(&#39;div.myClass&#39;) // 选择class为myClass的div元素 $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素  jQuery的特有表达式
+$(&#39;a:first&#39;) //选择网页中第一个a元素 $(&#39;tr:odd&#39;) //选择表格的奇数行 $(&#39;#myForm :input&#39;) // 选择表单中的input元素 $(&#39;div:visible&#39;) //选择可见的div元素 $(&#39;div:gt(2)&#39;) // 选择所有的div元素，除了前三个 $(&#39;div:animated&#39;) // 选择当前处于动画状态的div元素   jQuery的链式操作是怎样的  jQuery设计思想之三，就是最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。 这是jQuery最令人称道、最方便的特点。它的原理在于每一步的jQuery操作，返回的都是一个jQuery对象，所以不同操作可以连在一起。 例
+$(&#39;div&#39;).find(&#39;h3&#39;).eq(2).html(&#39;Hello&#39;)  分解之后
+$(&#39;div&#39;) //找到div元素 .find(&#39;h3&#39;) //选择其中的h3元素 .eq(2) //选择第3个h3元素 .html(&#39;Hello&#39;); //将它的内容改为Hello  jQuery还提供了.end()方法，使得结果集可以后退一步
+$(&#39;div&#39;) .find(&#39;h3&#39;) .eq(2) .html(&#39;Hello&#39;) .end() //退回到选中所有的h3元素的那一步 .eq(0) //选中第一个h3元素 .html(&#39;World&#39;); //将它的内容改为World  jQuery 如何创建元素 创建新元素的方法非常简单，只要把新元素直接传入jQuery的构造函数就行了
+$(&#39;&amp;lt;p&amp;gt;Hello&amp;lt;/p&amp;gt;&#39;); $(&#39;&amp;lt;li class=&amp;quot;new&amp;quot;&amp;gt;new list item&amp;lt;/li&amp;gt;&#39;); $(&#39;ul&#39;).</description>
+    </item>
     
     <item>
       <title>Js函数的执行时机浅析</title>

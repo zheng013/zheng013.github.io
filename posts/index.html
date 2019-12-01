@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/posts/" />
 
-<meta property="og:updated_time" content="2019-11-24T09:34:39+08:00" />
+<meta property="og:updated_time" content="2019-12-01T23:12:49+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -91,6 +91,27 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://zheng-en.xyz/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/" class="link black dim">
+        jQuery的设计思想
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      jQuery如何获取元素 jQuery的基本设计思想和主要用法，就是选择某个网页元素，然后对其进行某种操作。  CSS选择器
+$(document) //选择整个文档对象 $('#myId') //选择ID为myId的网页元素 $('div.myClass') // 选择class为myClass的div元素 $('input[name=first]') // 选择name属性等于first的input元素  jQuery的特有表达式
+$('a:first') //选择网页中第一个a元素 $('tr:odd') //选择表格的奇数行 $('#myForm :input') // 选择表单中的input元素 $('div:visible') //选择可见的div元素 $('div:gt(2)') // 选择所有的div元素，除了前三个 $('div:animated') // 选择当前处于动画状态的div元素   jQuery的链式操作是怎样的  jQuery设计思想之三，就是最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。 这是jQuery最令人称道、最方便的特点。它的原理在于每一步的jQuery操作，返回的都是一个jQuery对象，所以不同操作可以连在一起。 例
+$('div').find('h3').eq(2).html('Hello')  分解之后
+$('div') //找到div元素 .find('h3') //选择其中的h3元素 .eq(2) //选择第3个h3元素 .html('Hello'); //将它的内容改为Hello  jQuery还提供了.end()方法，使得结果集可以后退一步
+$('div') .find('h3') .eq(2) .html('Hello') .end() //退回到选中所有的h3元素的那一步 .eq(0) //选中第一个h3元素 .html('World'); //将它的内容改为World  jQuery 如何创建元素 创建新元素的方法非常简单，只要把新元素直接传入jQuery的构造函数就行了
+$('&lt;p&gt;Hello&lt;/p&gt;'); $('&lt;li class=&quot;new&quot;&gt;new list item&lt;/li&gt;'); $('ul').
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -251,38 +272,6 @@ JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏
  作用：跳转外部页面、跳转内部锚点、跳转到邮箱或电话
  a的href的取值
    网址（https://google.com、http://google.com、//google.com） 路径（a/b/c及a/b/c、index.html及./index.html） 伪协议（javascript:代码、mailto：邮箱、tel:手机号） id（href=#xxx 锚链接） 在http协议下的根目录和文件地址的目录不同    a的target取值   内置名字（-blank、-top、-parent、-self） 程序员命名（windows的name、iframe的name）   a的download   不是打开页面，而是下载页面 不是所有浏览器都支持，尤其是手机浏览器可能不支持  img 标签的用法  作用（发出get请求，展示一张图片） 属性（alt、height、width、src） 事件（onload、onerror js监听是否调用成功） 响应式（max-width:100% 满足手机的观看） 可替换元素（面试的时候可能会问到） 永远不要让图片变形作为前端开发，要么只写宽或高 alt：当图片没有正常加载出来时，给出的提示  table标签的用法  相关的标签   thead（表头） tbody（在里面放置tr、th、td） tfoot tr（一行） th （内容标题） td （内容）   相关样式   table-layout（行列的适应） border-collapse（合并） border-spacing（单元格之间的间距）  其他相关知识点  我们不用使用双击打开index.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://zheng-en.xyz/posts/html%E5%85%A5%E9%97%A8%E5%8D%9A%E5%AE%A2bad11.08/" class="link black dim">
-        HTML入门博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      HTML入门知识点总结（第九到十课） HTML概览  知识一(概念介绍） HyperText Markup Language (超文本标记语言） WWW(万维网)是基于互联网的基础上建立的 HTML之父—Tim Berners-Lee (发表了一遍文章HTML-Tags） WWW=URL(网址)+HTTP(服务器)+HTML(网页) 互联网的本质—就是内容的共享
- 知识二(如何制作出网页)
- 域名知识
- HTTP服务器知识
- HTML知识
- 其他(js css 等等）
- 知识三
- 原始的18个标签（ title h1~h6 nextid address base hp1/hp2 a dl/dt/dd isindex ul/li listing menu p dir )
- H5指的就是在手机上呈现的页面
- 利用较为权威的MDN学习HTML知识
- 狭义的HTML5(标签 css 等等）
- 广义的HTML5（HTML5的技术合集，详情可查看MDN文档）
- 知识四(正确的学习HTML的方法)
- 把所有标签读一遍，并理解用法。
- 最重要的记住div/span标签
- 找页面仿写,记忆遗忘曲线—要多写，多改。
- 知识五(体系化学习-学习一门语言)
- 语法(大小写有区别吗 要加引号吗 如何注释(CTRL+/） 如何组合）
     </div>
   </div>
 </div>
