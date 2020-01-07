@@ -6,10 +6,21 @@
     <description>Recent content in Posts on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 05 Jan 2020 15:18:19 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jan 2020 19:26:49 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>浅析Vue两个版本的区别</title>
+      <link>https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90vue%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Tue, 07 Jan 2020 19:26:49 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90vue%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>浅析Vue两个版本的区别 官方文档的解释 方方老师的总结 两个版本对应的文件名  完整版包含运行时和编译器。简单来说，只要文件名中不包含runtime的都是完整版，否则为运行时版的。 完整版和运行时版都加上min就表示是在生产环境下的，给用户使用的版本，减少了注释等等。  template 和 render 怎么用  由于运行时版的vue缺少了编译器，我们就不能在template下写html文件。此时就必须通过render提供的一个h函数，编写h函数下的代码实现转换。但如果我们将html文件写在*.vue文件下，然后使用h函数去render其中的内容，此时vue会通过内部的vue-loader实现编译器的效果，所有的脏活累活由其实现。 完整版拥有更多的功能，我们可以在template里直接写我们的模板代码，由编译器自动进行转换。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。如果你仍然希望使用完整版，则需要在打包工具里配置一个别名
+module.exports = { // ... resolve: { alias: { &#39;vue$&#39;: &#39;vue/dist/vue.esm.js&#39; // 用 webpack 1 时需用 &#39;vue/dist/vue.common.js&#39; } } } // webpack4中可使用 mode: &#39;production&#39;  要尽量使用运行时版，以减少代码的体积，最重要的是提升用户的体验。
+  谢谢观看 😁😁😁</description>
+    </item>
     
     <item>
       <title>浅析MVC</title>

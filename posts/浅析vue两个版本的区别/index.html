@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>郑李建的个人博客  | 浅析Vue两个版本的区别</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="浅析Vue两个版本的区别" />
+<meta property="og:description" content="浅析Vue两个版本的区别 官方文档的解释 方方老师的总结 两个版本对应的文件名  完整版包含运行时和编译器。简单来说，只要文件名中不包含runtime的都是完整版，否则为运行时版的。 完整版和运行时版都加上min就表示是在生产环境下的，给用户使用的版本，减少了注释等等。  template 和 render 怎么用  由于运行时版的vue缺少了编译器，我们就不能在template下写html文件。此时就必须通过render提供的一个h函数，编写h函数下的代码实现转换。但如果我们将html文件写在*.vue文件下，然后使用h函数去render其中的内容，此时vue会通过内部的vue-loader实现编译器的效果，所有的脏活累活由其实现。 完整版拥有更多的功能，我们可以在template里直接写我们的模板代码，由编译器自动进行转换。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。如果你仍然希望使用完整版，则需要在打包工具里配置一个别名
+module.exports = { // ... resolve: { alias: { &#39;vue$&#39;: &#39;vue/dist/vue.esm.js&#39; // 用 webpack 1 时需用 &#39;vue/dist/vue.common.js&#39; } } } // webpack4中可使用 mode: &#39;production&#39;  要尽量使用运行时版，以减少代码的体积，最重要的是提升用户的体验。
+  谢谢观看 😁😁😁" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90vue%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/" />
+<meta property="article:published_time" content="2020-01-07T19:26:49+08:00" />
+<meta property="article:modified_time" content="2020-01-07T19:26:49+08:00" />
+<meta itemprop="name" content="浅析Vue两个版本的区别">
+<meta itemprop="description" content="浅析Vue两个版本的区别 官方文档的解释 方方老师的总结 两个版本对应的文件名  完整版包含运行时和编译器。简单来说，只要文件名中不包含runtime的都是完整版，否则为运行时版的。 完整版和运行时版都加上min就表示是在生产环境下的，给用户使用的版本，减少了注释等等。  template 和 render 怎么用  由于运行时版的vue缺少了编译器，我们就不能在template下写html文件。此时就必须通过render提供的一个h函数，编写h函数下的代码实现转换。但如果我们将html文件写在*.vue文件下，然后使用h函数去render其中的内容，此时vue会通过内部的vue-loader实现编译器的效果，所有的脏活累活由其实现。 完整版拥有更多的功能，我们可以在template里直接写我们的模板代码，由编译器自动进行转换。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。如果你仍然希望使用完整版，则需要在打包工具里配置一个别名
+module.exports = { // ... resolve: { alias: { &#39;vue$&#39;: &#39;vue/dist/vue.esm.js&#39; // 用 webpack 1 时需用 &#39;vue/dist/vue.common.js&#39; } } } // webpack4中可使用 mode: &#39;production&#39;  要尽量使用运行时版，以减少代码的体积，最重要的是提升用户的体验。
+  谢谢观看 😁😁😁">
+
+
+<meta itemprop="datePublished" content="2020-01-07T19:26:49&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-07T19:26:49&#43;08:00" />
+<meta itemprop="wordCount" content="41">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅析Vue两个版本的区别"/>
+<meta name="twitter:description" content="浅析Vue两个版本的区别 官方文档的解释 方方老师的总结 两个版本对应的文件名  完整版包含运行时和编译器。简单来说，只要文件名中不包含runtime的都是完整版，否则为运行时版的。 完整版和运行时版都加上min就表示是在生产环境下的，给用户使用的版本，减少了注释等等。  template 和 render 怎么用  由于运行时版的vue缺少了编译器，我们就不能在template下写html文件。此时就必须通过render提供的一个h函数，编写h函数下的代码实现转换。但如果我们将html文件写在*.vue文件下，然后使用h函数去render其中的内容，此时vue会通过内部的vue-loader实现编译器的效果，所有的脏活累活由其实现。 完整版拥有更多的功能，我们可以在template里直接写我们的模板代码，由编译器自动进行转换。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。如果你仍然希望使用完整版，则需要在打包工具里配置一个别名
+module.exports = { // ... resolve: { alias: { &#39;vue$&#39;: &#39;vue/dist/vue.esm.js&#39; // 用 webpack 1 时需用 &#39;vue/dist/vue.common.js&#39; } } } // webpack4中可使用 mode: &#39;production&#39;  要尽量使用运行时版，以减少代码的体积，最重要的是提升用户的体验。
+  谢谢观看 😁😁😁"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://zheng-en.xyz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      郑李建的个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">浅析Vue两个版本的区别</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-01-07T19:26:49&#43;08:00">January 7, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="浅析vue两个版本的区别">浅析Vue两个版本的区别</h1>
+
+<h3 id="官方文档的解释">官方文档的解释</h3>
+
+<p><img src="/images/vue.png" alt="图一" /></p>
+
+<h3 id="方方老师的总结">方方老师的总结</h3>
+
+<p><img src="/images/vue的两个版本.jpg" alt="图二" /></p>
+
+<h2 id="两个版本对应的文件名">两个版本对应的文件名</h2>
+
+<ul>
+<li>完整版包含运行时和编译器。简单来说，只要文件名中不包含runtime的都是完整版，否则为运行时版的。</li>
+<li>完整版和运行时版都加上min就表示是在生产环境下的，给用户使用的版本，减少了注释等等。</li>
+</ul>
+
+<h2 id="template-和-render-怎么用">template 和 render 怎么用</h2>
+
+<ul>
+<li>由于运行时版的vue缺少了编译器，我们就不能在template下写html文件。此时就必须通过render提供的一个h函数，编写h函数下的代码实现转换。但如果我们将html文件写在*.vue文件下，然后使用h函数去render其中的内容，此时vue会通过内部的vue-loader实现编译器的效果，所有的脏活累活由其实现。</li>
+<li>完整版拥有更多的功能，我们可以在template里直接写我们的模板代码，由编译器自动进行转换。</li>
+
+<li><p>因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。如果你仍然希望使用完整版，则需要在打包工具里配置一个别名</p>
+
+<pre><code class="language-(javascript)">module.exports = {
+// ...
+resolve: {
+alias: {
+  'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
+}
+}
+}
+// webpack4中可使用  mode: 'production'
+</code></pre></li>
+
+<li><p>要尽量使用运行时版，以减少代码的体积，最重要的是提升用户的体验。</p></li>
+</ul>
+
+<p>谢谢观看 😁😁😁</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zheng-en.xyz/" >
+    &copy; 2020 郑李建的个人博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
