@@ -6,10 +6,25 @@
     <description>Recent content on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 07 Jan 2020 19:26:49 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jan 2020 22:08:05 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>对于Vue数据响应式地理解</title>
+      <link>https://zheng-en.xyz/posts/%E5%AF%B9%E4%BA%8Evue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9C%B0%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Thu, 09 Jan 2020 22:08:05 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/%E5%AF%B9%E4%BA%8Evue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9C%B0%E7%90%86%E8%A7%A3/</guid>
+      <description>Vue的数据响应式的理解 我对数据响应式的理解  数据响应式，简单来说就是数据驱动。当数据发生改变时，vue会自动的去更新视图。 个人认为视图其实就是对数据的反应，我们最应该重视的如何去处理数据的变化。  基本原理  通过Object.defineProperty()方法设置了setter/getter属性完成了对data的特殊处理。 我们由了代理和监听的思想，监听就是修改data的过程，代理是在被修改过的原始data上创建的。这样，彼此的连接才不会断开。  vue的实现  图例  Vue的响应式，核心机制是观察者模式。
+ 数据是被观察的一方，发生改变时，通知所有的观察者，这样观察者可以做出响应，比如，重新渲染然后更新视图。
+ 我们把依赖数据的观察者称为 watcher
+ Vue通过在data和watcher间创建一个 dep对象，来记录这种依赖关系。
+ 简单来说，我们需要对传入vue的任何data数据有所有控制，包括它的来源，变化，依赖等等。vue需要实时知道你的数据信息，以方便更新视图。
+ 至于vue中间具体实现的代码，我还需要继续研究和细品，但只要明白其中的原理和方法，就可以更快更好的去理解它。
+  研究思路和方法永远比知识更重要，多实践，多思考，然后去实现他。加油ヾ(◍°∇°◍)ﾉﾞ 谢谢观看！！！</description>
+    </item>
     
     <item>
       <title>浅析Vue两个版本的区别</title>

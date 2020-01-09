@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/posts/" />
 
-<meta property="og:updated_time" content="2020-01-07T19:26:49+08:00" />
+<meta property="og:updated_time" content="2020-01-09T22:08:05+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -91,6 +91,27 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://zheng-en.xyz/posts/%E5%AF%B9%E4%BA%8Evue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9C%B0%E7%90%86%E8%A7%A3/" class="link black dim">
+        对于Vue数据响应式地理解
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue的数据响应式的理解 我对数据响应式的理解  数据响应式，简单来说就是数据驱动。当数据发生改变时，vue会自动的去更新视图。 个人认为视图其实就是对数据的反应，我们最应该重视的如何去处理数据的变化。  基本原理  通过Object.defineProperty()方法设置了setter/getter属性完成了对data的特殊处理。 我们由了代理和监听的思想，监听就是修改data的过程，代理是在被修改过的原始data上创建的。这样，彼此的连接才不会断开。  vue的实现  图例  Vue的响应式，核心机制是观察者模式。
+ 数据是被观察的一方，发生改变时，通知所有的观察者，这样观察者可以做出响应，比如，重新渲染然后更新视图。
+ 我们把依赖数据的观察者称为 watcher
+ Vue通过在data和watcher间创建一个 dep对象，来记录这种依赖关系。
+ 简单来说，我们需要对传入vue的任何data数据有所有控制，包括它的来源，变化，依赖等等。vue需要实时知道你的数据信息，以方便更新视图。
+ 至于vue中间具体实现的代码，我还需要继续研究和细品，但只要明白其中的原理和方法，就可以更快更好的去理解它。
+  研究思路和方法永远比知识更重要，多实践，多思考，然后去实现他。加油ヾ(◍°∇°◍)ﾉﾞ 谢谢观看！！！
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -248,25 +269,6 @@ JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       浅析URL URL 包含哪几部分（统一资源定位符）  URL=HTTP（协议）+域名或IP+端口号+路径+查询字符串+锚点 HTTP：HyperText Transfer Protocol 超文本传输协议 域名就是IP的别称，便于用户快速访问你得网站 端口号：一台机器提供的很多服务对应着不同的端口号（默认80提供HTTP服务 默认443提供HTTPS的服务） 路径：根据提供的路径不同可以请求访问不同的页面 查询字符串：根据查询字符串的不同可以访问同一个页面下的不同内容 锚点：根据不同的#锚点可以访问统一页面的不同位置  DNS 的作用是什么  将域名与对应的IP对映起来 方便用能通过域名直接的去访问到IP  nslookup命令如何使用  nslookup baidu.com(域名) 可以查找到域名所对应的所有服务器IP地址  IP的作用是什么  可以定位到一台设备 可以封装的数据报文，以便跟其他的设备进行交流 一个域名可以对应多个IP地址（均衡负载） 一个IP地址也可以对应不同的域名（开发者为了省钱）  ping 命令怎么用  ping baidu.com 可以得到域名所在地区对应的一台服务器的IP地址 便于测试本机与服务器的联通性，较为精确。  域名是什么  可以是自己申请的由字符串构成的，也是IP地址的代称 com是顶级域名 xxx.com是二级域名（俗称一级域名） www.xxx.com是三级域名（俗称二级域名） 他们之间为父子关系 有时候www.xxx.com 和 xxx.com可能不是同一个域名，访问到的网站也可能不同。  其他知识点  锚点的内容不会传至服务器上 利用curl命令发送HTTP请求 URL在我理解就是相当于我们现实生活中的定位，我可以通过这个地址找到你或者其他的。   加油&mdash; 后续有相关想法和内容还会一直更新，keep going！ 谢谢观看😄😄😄
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://zheng-en.xyz/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
-        CSS知识总结
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      CSS知识总结 浏览器渲染原理  根据HTML构建HTML树（DOM） 根据CSS构建CSS树（CSSOM） 将两颗树合并成一颗渲染树（reader.tree） Layout布局（文档流、盒模型、计算大小和位置） Paint绘制（把边框颜色、文字颜色、阴影等样式画出来） Compose合成（根据层叠关系展示画面） 可利用chrome等浏览器开发者工具中Timelie-Paint-Layer查看优化（绘制分析器）   CSS 动画的两种做法 transition（过渡）  补充中间帧，实现动画效果 transition:属性名|时长|过渡方式|延迟 截取部分代码
-#heart{ display: inline-block; margin: 100px; position: relative; transition: all 1s; } #heart:hover{ transform: scale(1.2); }  过渡需要有起始（如hover和非hover状态）
- 让动画停留在最后一帧，在其声明上加上forward
-  animation（动画）  声明关键帧，添加动画 配合@keyframe实现动画
-#heart{ display: inline-block; margin: 100px; position: relative; animation: .5s heart infinite alternate-reverse; } @keyframes heart { 0%{ transform: scale(1); } 100%{ transform: scale(1.2); } } /*利用百分比控制范围*/ /*利用from to控制*/ {from{ transform:translateX(0%); } to{ transform:translateX(100%); } }  animation: 时长|过渡方式|延迟|次数|方向|填充模式|是否暂停|动画名
     </div>
   </div>
 </div>
