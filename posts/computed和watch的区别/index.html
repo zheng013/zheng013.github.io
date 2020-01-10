@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>郑李建的个人博客  | Computed和watch的区别</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Computed和watch的区别" />
+<meta property="og:description" content="computed VS watch 1.定义  computed是一个计算属性,类似于过滤器,对绑定到view的数据进行处理，属性。 watch是一个观察的动作,用于观察依赖数据的变化再去执行一个函数，异步。  2.语法  computed （{ [key: string]: Function | { get: Function, set: Function } }）
+var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function () { return this.a * 2 }, // both get and set aPlus: { get: function () { return this.a &#43; 1 }, set: function (v) { this.a = v - 1 } } } })  watch（{ [key: string]: string | Function | Object | Array}）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/" />
+<meta property="article:published_time" content="2020-01-10T23:16:58+08:00" />
+<meta property="article:modified_time" content="2020-01-10T23:16:58+08:00" />
+<meta itemprop="name" content="Computed和watch的区别">
+<meta itemprop="description" content="computed VS watch 1.定义  computed是一个计算属性,类似于过滤器,对绑定到view的数据进行处理，属性。 watch是一个观察的动作,用于观察依赖数据的变化再去执行一个函数，异步。  2.语法  computed （{ [key: string]: Function | { get: Function, set: Function } }）
+var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function () { return this.a * 2 }, // both get and set aPlus: { get: function () { return this.a &#43; 1 }, set: function (v) { this.a = v - 1 } } } })  watch（{ [key: string]: string | Function | Object | Array}）">
+
+
+<meta itemprop="datePublished" content="2020-01-10T23:16:58&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-10T23:16:58&#43;08:00" />
+<meta itemprop="wordCount" content="248">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Computed和watch的区别"/>
+<meta name="twitter:description" content="computed VS watch 1.定义  computed是一个计算属性,类似于过滤器,对绑定到view的数据进行处理，属性。 watch是一个观察的动作,用于观察依赖数据的变化再去执行一个函数，异步。  2.语法  computed （{ [key: string]: Function | { get: Function, set: Function } }）
+var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function () { return this.a * 2 }, // both get and set aPlus: { get: function () { return this.a &#43; 1 }, set: function (v) { this.a = v - 1 } } } })  watch（{ [key: string]: string | Function | Object | Array}）"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://zheng-en.xyz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      郑李建的个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Computed和watch的区别</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-01-10T23:16:58&#43;08:00">January 10, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="computed-vs-watch">computed VS watch</h1>
+
+<h2 id="1-定义">1.定义</h2>
+
+<ul>
+<li>computed是一个计算属性,类似于过滤器,对绑定到view的数据进行处理，属性。</li>
+<li>watch是一个观察的动作,用于观察依赖数据的变化再去执行一个函数，异步。</li>
+</ul>
+
+<h2 id="2-语法">2.语法</h2>
+
+<ul>
+<li><p>computed （{ [key: string]: Function | { get: Function, set: Function } }）</p>
+
+<pre><code>var vm = new Vue({
+data: { a: 1 },
+computed: {
+// get only  or
+aDouble: function () {
+  return this.a * 2
+},
+// both get and set
+aPlus: {
+  get: function () {
+    return this.a + 1
+  },
+  set: function (v) {
+    this.a = v - 1
+  }
+}
+}
+})
+
+</code></pre></li>
+
+<li><p>watch（{ [key: string]: string | Function | Object | Array}）</p>
+
+<pre><code>var vm = new Vue({
+data: {
+a: 1,
+b: 2,
+c: 3,
+d: 4,
+e: {
+  f: {
+    g: 5
+  }
+}
+},
+watch: {
+a: function (val, oldVal) {
+  console.log('new: %s, old: %s', val, oldVal)
+},
+// string method name
+b: 'someMethod',
+// the callback will be called whenever any of the watched object properties change regardless of their nested depth
+c: {
+  handler: function (val, oldVal) { /* ... */ },
+  deep: true  //当被观察者是一个对象时
+},
+// the callback will be called immediately after the start of the observation
+d: {
+  handler: 'someMethod',
+  immediate: true  //立即执行一次handler的函数
+},
+e: [
+  'handle1',
+  function handle2 (val, oldVal) { /* ... */ },
+  {
+    handler: function handle3 (val, oldVal) { /* ... */ },
+    /* ... */
+  }
+],
+// watch vm.e.f's value: {g: 5}  用于获取具体的属性
+'e.f': function (val, oldVal) { /* ... */ } 
+}
+})
+</code></pre></li>
+</ul>
+
+<h2 id="3-总结">3.总结</h2>
+
+<ul>
+<li>computed:</li>
+<li>computed为计算属性，可以认为该属性由多个属性进行了影响。 若模板内需要用到声明逻辑的话，我们就需要将其写入计算属性里面。</li>
+<li>此为为一个具有getter和setter方法的计算属性，我们在调用里面的属性进行计算时， 就不需要加一个括号，我们直接将其当做属性来使用。只要依赖没有发生改变，无论几次去访问该属性 都会立即去返回之前的计算结果，而不必再执行函数。</li>
+<li>计算属性是基于响应式依赖来进行缓存的，只有在依赖发生变化时，才会去求值。</li>
+
+<li><p>应用：简化template里面{{}}计算和处理props或$emit的传值。</p></li>
+
+<li><p>watch:</p></li>
+
+<li><p>是观察的动作,无缓存性，页面重新渲染时值不变化也会执行。</p></li>
+
+<li><p>watch为一个侦听器，主要是监听数据的变化，然后调用一个函数。 当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。</p></li>
+
+<li><p>应用：监听props，$emit或本组件的值执行异步操作。</p></li>
+</ul>
+
+<h3 id="无论是计算属性-侦听-方法-都需要根据依赖进行一个变化-当你有一些数据需要随着其它数据变动而变动时-通常更好的做法是使用计算属性而不是命令式的-watch回调">无论是计算属性，侦听，方法，都需要根据依赖进行一个变化。当你有一些数据需要随着其它数据变动而变动时，通常更好的做法是使用计算属性而不是命令式的 watch回调。</h3>
+
+<p>知识就是不断的总结回顾，运用才会深刻的记住。一定要多想，多用，多积累。</p>
+
+<p>谢谢观看🤭(●&rsquo;◡&rsquo;●)  加油💪</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zheng-en.xyz/" >
+    &copy; 2020 郑李建的个人博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

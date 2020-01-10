@@ -6,10 +6,20 @@
     <description>Recent content in Posts on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Jan 2020 22:08:05 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 23:16:58 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Computed和watch的区别</title>
+      <link>https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Fri, 10 Jan 2020 23:16:58 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>computed VS watch 1.定义  computed是一个计算属性,类似于过滤器,对绑定到view的数据进行处理，属性。 watch是一个观察的动作,用于观察依赖数据的变化再去执行一个函数，异步。  2.语法  computed （{ [key: string]: Function | { get: Function, set: Function } }）
+var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function () { return this.a * 2 }, // both get and set aPlus: { get: function () { return this.a + 1 }, set: function (v) { this.a = v - 1 } } } })  watch（{ [key: string]: string | Function | Object | Array}）</description>
+    </item>
     
     <item>
       <title>对于Vue数据响应式地理解</title>

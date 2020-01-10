@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/" />
 
-<meta property="og:updated_time" content="2020-01-09T22:08:05+08:00" />
+<meta property="og:updated_time" content="2020-01-10T23:16:58+08:00" />
 <meta itemprop="name" content="郑李建的个人博客">
 <meta itemprop="description" content="">
 
@@ -122,6 +122,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/" class="color-inherit dim link">
+            Computed和watch的区别
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          computed VS watch 1.定义  computed是一个计算属性,类似于过滤器,对绑定到view的数据进行处理，属性。 watch是一个观察的动作,用于观察依赖数据的变化再去执行一个函数，异步。  2.语法  computed （{ [key: string]: Function | { get: Function, set: Function } }）
+var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function () { return this.a * 2 }, // both get and set aPlus: { get: function () { return this.a + 1 }, set: function (v) { this.a = v - 1 } } } })  watch（{ [key: string]: string | Function | Object | Array}）
+        </div>
+          <a href="https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://zheng-en.xyz/posts/%E5%AF%B9%E4%BA%8Evue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9C%B0%E7%90%86%E8%A7%A3/" class="color-inherit dim link">
             对于Vue数据响应式地理解
             </a>
@@ -170,40 +195,18 @@ module.exports = { // ... resolve: { alias: { 'vue$': 'vue/dist/vue.esm.js' // �
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90mvc/" class="color-inherit dim link">
-            浅析MVC
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-           浅析MVC MVC 三个对象分别做什么  M：模型model用于封装与应用程序的业务逻辑以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将会去通知有关视图更新。 V：视图view是它在屏幕上的表示，描绘当前model的状态。当模型的数据发生变化，视图也会相应地得到刷新自己的机会。 C：控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。  MVC包括这三类对象，我们将他们分离以提高灵活性和复用性。  伪代码   EventBus有哪些API,是做什么用的。  eventBus主要用于各个模块间的通信，简化应用组件间的通信；解耦事件的发送者和接收者。 监听：eventBus.on(eventName,fn) 绑定：eventBUs.trigger(eventName,data) 解除：eventBus.off(eventName,fn) 伪代码  表驱动编程的理解  表格驱动的意义在于：逻辑和数据分离 表驱动法就是一种编程模式，从表里面查找信息而不使用逻辑语句。事实上，凡是能通过逻辑语句来选择的事物，都可以通过查表来选择。对简单的情况而言，使用逻辑语句更为容易和直白。但随着逻辑链的越来越复杂，查表法也就更能体现出它的优势。 提高了程序的可读性。一个消息如何处理，只要看一下驱动表就知道，非常明显。 减少了重复代码。将公共的代码逻辑抽取出来进行处理。 可扩展性。方便修改，程序有了个明显的主干。 降低了复杂度。通过把程序逻辑的复杂度转移到人类更容易处理的数据中来，从而达到控制复杂度的目标。  对于模块化的理解  何为模块化，模块化开发就是封装细节，提供使用接口，彼此之间互不影响，每个模块都是实现某一特定的功能。模块化开发的基础就是函数。 将一个程序实现在代码上的模块划分，将相同作用的模块内容结合到一起组成模块，需要的时候调用这个接口即可。实现的代码的可复用性，便于代码的维护，提高我们的工作效率。  CommonJS(参考)  模块化的目的在于营造安全封闭的作用域、且具有易于引用接口，按我的理解可分为模块定义、模块引入两部分。 在模块中存在一个module对象，它代表着模块本身，将需要导出的api挂载于其中地exports属性上就可以定义导出的接口，CommonJS规范中存在require（）方法，用于接收标识模块，引入到某个模块到当前的上下文中。
- 模块化涉及的知识需要深入的应用才能真正的去理解其中的奥妙，我们现在主要是先能够了解MVC的基础，,以后学习其他框架一样要用到MVC的知识,MVC的M一样会用到ajax,MVC的V一样会用到DOM,MVC的C一样会用到数据结构,算法以及面向对象的知识。
- 以我的理解，将项目模块化，分为三个部分：模型，视图和控制器三个部分。模型是应用对象，没有用户界面。视图表示它在屏幕上的显示，代表流向用户的数据。控制器定义用户界面对用户输入的响应方式，负责把用户的动作转成针对Model的操作。Model通过更新View的数据来反映数据的变化。
-  感觉自己现在有点点感觉了，但还是要不断的练习，不断的去看和理解。加油！加油！
-谢谢观看😁😁😁 
-        </div>
-          <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90mvc/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90mvc/" class="link black dim">
+              浅析MVC
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://zheng-en.xyz/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/" class="link black dim">
@@ -220,12 +223,6 @@ module.exports = { // ... resolve: { alias: { 'vue$': 'vue/dist/vue.esm.js' // �
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://zheng-en.xyz/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
               JS对象的基本用法
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://zheng-en.xyz/posts/js%E8%AF%AD%E6%B3%95/" class="link black dim">
-              JS语法
             </a>
           </h2>
         

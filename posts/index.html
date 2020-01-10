@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/posts/" />
 
-<meta property="og:updated_time" content="2020-01-09T22:08:05+08:00" />
+<meta property="og:updated_time" content="2020-01-10T23:16:58+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -91,6 +91,22 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/" class="link black dim">
+        Computed和watch的区别
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      computed VS watch 1.定义  computed是一个计算属性,类似于过滤器,对绑定到view的数据进行处理，属性。 watch是一个观察的动作,用于观察依赖数据的变化再去执行一个函数，异步。  2.语法  computed （{ [key: string]: Function | { get: Function, set: Function } }）
+var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function () { return this.a * 2 }, // both get and set aPlus: { get: function () { return this.a + 1 }, set: function (v) { this.a = v - 1 } } } })  watch（{ [key: string]: string | Function | Object | Array}）
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -254,21 +270,6 @@ JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏
       浅谈JavaScript 早期  94年，网景公司发布了当时世界比较成熟的一个网站，但其只能用来浏览，不具备与访问者互动的能力。 因此急需一种网页脚本语言，可以使得浏览器可以互动。 两个方向：一个是利用现有的语言资源（python、TCL等）推广简单，另一个是自己开发一个完全适应的全新语言。 当时网景和sun公司联合推进了这项语言的诞生。 布莱登在依据公司要求未来的网页脚本语言需看上去与Java有联系或相似，但比其简单的要求。 仅仅在十天后布莱登就将其原型设计出来了，并在浏览器上大获成功。 JavaScript语言实际上是两种语言风格的混合产物（简化的函数式编程+简化的面向对象编程）  发展  微软公司在JavaScript推出不久后，也推出了JScript。 JScript也是一种JavaScript实现，这两个JavaScript语言版本在浏览器端共存意味着语言标准化的缺失。 96年，网景公司正式向ECMA提交语言标准。 97年，ECMA以JavaScript语言为基础制定了ECMAScript标准规范ECMA-262。JavaScript成为了ECMAScript最著名的实现之一。  现状  随着chrome浏览器的发展壮大，ie的衰落，JavaScript得以快速发展，前端技术也越来越多。 JavaScript是一门基于原型、函数先行的语言，是一门多范式的语言，它支持面向对象编程，命令式编程，以及函数式编程。 由于设计时间的仓促等相关原因，JavaScript的语言设计存在很多的缺陷和严谨，正是因为这样才造就他的灵活性。 Javascript目前是网页编程的唯一语言，只要互联网继续发展，它就必然一起发展。 node.js使得Javascript可以用于后端的服务器编程。 coffeeScript使你可以用python和ruby的语法，撰写Javascript。 要发布新版本的语言标准，就可以弥补这些设计缺陷。如ES6等后续最新的版本 虽然标准的发布和标准的实现是两回事，但是JavaScript一定会日益强壮。  JavaScript的语言缺陷和严谨性只有自己使用了才知道，世界上哪有完美的东西。但他现在就是最适合网页编程的语言，所以从另一个角度说他也是最好的。 编程语言的坑只有实际通过项目编写才能遇到，我之后会将他们归类总结，以便更高效的编写。
 加油！ 已经开始学习一门语言了，要多下功夫把他学会了。 加油 加油💪💪💪
 谢谢观看🏀😄🏀😄🏀😄
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
-        浅析URL
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      浅析URL URL 包含哪几部分（统一资源定位符）  URL=HTTP（协议）+域名或IP+端口号+路径+查询字符串+锚点 HTTP：HyperText Transfer Protocol 超文本传输协议 域名就是IP的别称，便于用户快速访问你得网站 端口号：一台机器提供的很多服务对应着不同的端口号（默认80提供HTTP服务 默认443提供HTTPS的服务） 路径：根据提供的路径不同可以请求访问不同的页面 查询字符串：根据查询字符串的不同可以访问同一个页面下的不同内容 锚点：根据不同的#锚点可以访问统一页面的不同位置  DNS 的作用是什么  将域名与对应的IP对映起来 方便用能通过域名直接的去访问到IP  nslookup命令如何使用  nslookup baidu.com(域名) 可以查找到域名所对应的所有服务器IP地址  IP的作用是什么  可以定位到一台设备 可以封装的数据报文，以便跟其他的设备进行交流 一个域名可以对应多个IP地址（均衡负载） 一个IP地址也可以对应不同的域名（开发者为了省钱）  ping 命令怎么用  ping baidu.com 可以得到域名所在地区对应的一台服务器的IP地址 便于测试本机与服务器的联通性，较为精确。  域名是什么  可以是自己申请的由字符串构成的，也是IP地址的代称 com是顶级域名 xxx.com是二级域名（俗称一级域名） www.xxx.com是三级域名（俗称二级域名） 他们之间为父子关系 有时候www.xxx.com 和 xxx.com可能不是同一个域名，访问到的网站也可能不同。  其他知识点  锚点的内容不会传至服务器上 利用curl命令发送HTTP请求 URL在我理解就是相当于我们现实生活中的定位，我可以通过这个地址找到你或者其他的。   加油&mdash; 后续有相关想法和内容还会一直更新，keep going！ 谢谢观看😄😄😄
     </div>
   </div>
 </div>

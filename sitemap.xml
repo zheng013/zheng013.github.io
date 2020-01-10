@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zheng-en.xyz/posts/</loc>
-    <lastmod>2020-01-09T22:08:05+08:00</lastmod>
+    <loc>https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    <lastmod>2020-01-10T23:16:58+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zheng-en.xyz/posts/%E5%AF%B9%E4%BA%8Evue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9C%B0%E7%90%86%E8%A7%A3/</loc>
-    <lastmod>2020-01-09T22:08:05+08:00</lastmod>
+    <loc>https://zheng-en.xyz/posts/</loc>
+    <lastmod>2020-01-10T23:16:58+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://zheng-en.xyz/</loc>
+    <lastmod>2020-01-10T23:16:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zheng-en.xyz/posts/%E5%AF%B9%E4%BA%8Evue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9C%B0%E7%90%86%E8%A7%A3/</loc>
     <lastmod>2020-01-09T22:08:05+08:00</lastmod>
   </url>
   
