@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/" />
 
-<meta property="og:updated_time" content="2020-01-10T23:16:58+08:00" />
+<meta property="og:updated_time" content="2020-01-11T19:24:16+08:00" />
 <meta itemprop="name" content="郑李建的个人博客">
 <meta itemprop="description" content="">
 
@@ -122,6 +122,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://zheng-en.xyz/posts/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8/" class="color-inherit dim link">
+            Vue中的.sync修饰符的作用
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          .sync修饰符的作用  直接来例子
+&lt;div id=&quot;app&quot;&gt; &lt;div&gt;{{bar}}&lt;/div&gt; &lt;my-comp :foo.sync=&quot;bar&quot;&gt;&lt;/my-comp&gt; &lt;/div&gt; &lt;script&gt; Vue.component('my-comp', { template: '&lt;div @click=&quot;increment&quot;&gt;点我+1&lt;/div&gt;', props: ['foo'], methods: { increment: function() { this.$emit('update:foo', this.foo+1); } } }); new Vue({ el: '#app', data: {bar: 0} }); &lt;/script&gt;  &lt;my-comp :foo.sync=&quot;bar&quot;&gt;&lt;/my-comp&gt; =&gt; 等价于 &lt;my-comp :foo=&quot;bar&quot; @update:foo='bar=$event' &gt;&lt;/my-comp&gt; $event代表触发事件时抛出的值   总结  vue 修饰符sync的功能是：当一个子组件改变了一个 prop 的值时，这个变化也会同步到父组件中所绑定。如果我们不用.sync，我们想做上面的那个弹窗功能，我们也可以props传初始值，然后事件监听，实现起来也不算复杂。其实这个修饰符就是一个语法糖，但是我们需要明白其中的原理，才能更好的去使用和掌握他。  谢谢观看！！！
+        </div>
+          <a href="https://zheng-en.xyz/posts/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/" class="color-inherit dim link">
             Computed和watch的区别
             </a>
@@ -169,38 +194,18 @@ var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function 
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90vue%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/" class="color-inherit dim link">
-            浅析Vue两个版本的区别
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          浅析Vue两个版本的区别 官方文档的解释 方方老师的总结 两个版本对应的文件名  完整版包含运行时和编译器。简单来说，只要文件名中不包含runtime的都是完整版，否则为运行时版的。 完整版和运行时版都加上min就表示是在生产环境下的，给用户使用的版本，减少了注释等等。  template 和 render 怎么用  由于运行时版的vue缺少了编译器，我们就不能在template下写html文件。此时就必须通过render提供的一个h函数，编写h函数下的代码实现转换。但如果我们将html文件写在*.vue文件下，然后使用h函数去render其中的内容，此时vue会通过内部的vue-loader实现编译器的效果，所有的脏活累活由其实现。 完整版拥有更多的功能，我们可以在template里直接写我们的模板代码，由编译器自动进行转换。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。如果你仍然希望使用完整版，则需要在打包工具里配置一个别名
-module.exports = { // ... resolve: { alias: { 'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js' } } } // webpack4中可使用 mode: 'production'  要尽量使用运行时版，以减少代码的体积，最重要的是提升用户的体验。
-  谢谢观看 😁😁😁
-        </div>
-          <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90vue%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90vue%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/" class="link black dim">
+              浅析Vue两个版本的区别
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90mvc/" class="link black dim">
@@ -217,12 +222,6 @@ module.exports = { // ... resolve: { alias: { 'vue$': 'vue/dist/vue.esm.js' // �
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://zheng-en.xyz/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA%E6%B5%85%E6%9E%90/" class="link black dim">
               Js函数的执行时机浅析
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://zheng-en.xyz/posts/js%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
-              JS对象的基本用法
             </a>
           </h2>
         
