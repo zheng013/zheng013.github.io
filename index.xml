@@ -6,10 +6,19 @@
     <description>Recent content on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Jan 2020 19:24:16 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 19:33:27 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JSONP跨域的解决方案</title>
+      <link>https://zheng-en.xyz/posts/jsonp%E8%B7%A8%E5%9F%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Thu, 05 Mar 2020 19:33:27 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/jsonp%E8%B7%A8%E5%9F%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description> 同源策略（浏览器出于安全的考虑，只允许与同域下的接口交互）  同协议：如都是http或https 同域名：如都是jirengu.com/a或jirengu.com/b 同端口：如都是80端口 只有以上三个全部相同才能说是同源，否则都需要考虑跨域的问题。  JSONP（JSON with padding）  JSONP就是通过script标签加载数据的方式去获取数据当做JS代码来执行。 需提前在页面上声明一个函数，函数名通过接口传参的方式传给后台，后台解析到函数名后在原始数据上包裹这个函数名，发送给前端。也就是，JSONP需要对应的接口的后端配合才能实现。  应用代码 function jsonp(setting) { setting.data=setting.data||{} setting.key=setting.key||&#39;callback&#39; setting.callback=setting.callback||function(){} setting.data[setting.key]=&#39;__onGetData__&#39; window.__onGetData__=function(data){ setting.callback(data) } const script=document.createElement(&#39;script&#39;) const query=[] for(var key in setting.data){ query.push(key+&#39;=&#39;+encodeURIComponent(setting.data)) } script.src=setting.url+&#39;?&#39;+query.join(&#39;&amp;amp;&#39;) document.head.appendChild(script) document.head.removeChild(script) } //实现一个jsonp的简单封装 jsonp({ url:&#39;http://photo.sina.cn/aj/index&#39;, key:&#39;jsoncallback&#39;, data:{ page:2, cate:&#39;recommend&#39; }, callback:function(ret){ console.log(ret) } })  后续有相关内容会继续补充。。。 </description>
+    </item>
     
     <item>
       <title>Vue中的.sync修饰符的作用</title>
@@ -37,7 +46,8 @@ var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function 
       <pubDate>Thu, 09 Jan 2020 22:08:05 +0800</pubDate>
       
       <guid>https://zheng-en.xyz/posts/%E5%AF%B9%E4%BA%8Evue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9C%B0%E7%90%86%E8%A7%A3/</guid>
-      <description>Vue的数据响应式的理解 我对数据响应式的理解  数据响应式，简单来说就是数据驱动。当数据发生改变时，vue会自动的去更新视图。 个人认为视图其实就是对数据的反应，我们最应该重视的如何去处理数据的变化。  基本原理  通过Object.defineProperty()方法设置了setter/getter属性完成了对data的特殊处理。 我们由了代理和监听的思想，监听就是修改data的过程，代理是在被修改过的原始data上创建的。这样，彼此的连接才不会断开。  vue的实现  图例  Vue的响应式，核心机制是观察者模式。
+      <description>#Vue的数据响应式的理解
+我对数据响应式的理解  数据响应式，简单来说就是数据驱动。当数据发生改变时，vue会自动的去更新视图。 个人认为视图其实就是对数据的反应，我们最应该重视的如何去处理数据的变化。  基本原理  通过Object.defineProperty()方法设置了setter/getter属性完成了对data的特殊处理。 我们由了代理和监听的思想，监听就是修改data的过程，代理是在被修改过的原始data上创建的。这样，彼此的连接才不会断开。  vue的实现  图例  Vue的响应式，核心机制是观察者模式。
  数据是被观察的一方，发生改变时，通知所有的观察者，这样观察者可以做出响应，比如，重新渲染然后更新视图。
  我们把依赖数据的观察者称为 watcher
  Vue通过在data和watcher间创建一个 dep对象，来记录这种依赖关系。
@@ -139,7 +149,7 @@ JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏
       <pubDate>Sun, 17 Nov 2019 09:42:01 +0800</pubDate>
       
       <guid>https://zheng-en.xyz/posts/%E6%B5%85%E8%B0%88javascript/</guid>
-      <description>浅谈JavaScript 早期  94年，网景公司发布了当时世界比较成熟的一个网站，但其只能用来浏览，不具备与访问者互动的能力。 因此急需一种网页脚本语言，可以使得浏览器可以互动。 两个方向：一个是利用现有的语言资源（python、TCL等）推广简单，另一个是自己开发一个完全适应的全新语言。 当时网景和sun公司联合推进了这项语言的诞生。 布莱登在依据公司要求未来的网页脚本语言需看上去与Java有联系或相似，但比其简单的要求。 仅仅在十天后布莱登就将其原型设计出来了，并在浏览器上大获成功。 JavaScript语言实际上是两种语言风格的混合产物（简化的函数式编程+简化的面向对象编程）  发展  微软公司在JavaScript推出不久后，也推出了JScript。 JScript也是一种JavaScript实现，这两个JavaScript语言版本在浏览器端共存意味着语言标准化的缺失。 96年，网景公司正式向ECMA提交语言标准。 97年，ECMA以JavaScript语言为基础制定了ECMAScript标准规范ECMA-262。JavaScript成为了ECMAScript最著名的实现之一。  现状  随着chrome浏览器的发展壮大，ie的衰落，JavaScript得以快速发展，前端技术也越来越多。 JavaScript是一门基于原型、函数先行的语言，是一门多范式的语言，它支持面向对象编程，命令式编程，以及函数式编程。 由于设计时间的仓促等相关原因，JavaScript的语言设计存在很多的缺陷和严谨，正是因为这样才造就他的灵活性。 Javascript目前是网页编程的唯一语言，只要互联网继续发展，它就必然一起发展。 node.js使得Javascript可以用于后端的服务器编程。 coffeeScript使你可以用python和ruby的语法，撰写Javascript。 要发布新版本的语言标准，就可以弥补这些设计缺陷。如ES6等后续最新的版本 虽然标准的发布和标准的实现是两回事，但是JavaScript一定会日益强壮。  JavaScript的语言缺陷和严谨性只有自己使用了才知道，世界上哪有完美的东西。但他现在就是最适合网页编程的语言，所以从另一个角度说他也是最好的。 编程语言的坑只有实际通过项目编写才能遇到，我之后会将他们归类总结，以便更高效的编写。
+      <description>早期  94年，网景公司发布了当时世界比较成熟的一个网站，但其只能用来浏览，不具备与访问者互动的能力。 因此急需一种网页脚本语言，可以使得浏览器可以互动。 两个方向：一个是利用现有的语言资源（python、TCL等）推广简单，另一个是自己开发一个完全适应的全新语言。 当时网景和sun公司联合推进了这项语言的诞生。 布莱登在依据公司要求未来的网页脚本语言需看上去与Java有联系或相似，但比其简单的要求。 仅仅在十天后布莱登就将其原型设计出来了，并在浏览器上大获成功。 JavaScript语言实际上是两种语言风格的混合产物（简化的函数式编程+简化的面向对象编程）  发展  微软公司在JavaScript推出不久后，也推出了JScript。 JScript也是一种JavaScript实现，这两个JavaScript语言版本在浏览器端共存意味着语言标准化的缺失。 96年，网景公司正式向ECMA提交语言标准。 97年，ECMA以JavaScript语言为基础制定了ECMAScript标准规范ECMA-262。JavaScript成为了ECMAScript最著名的实现之一。  现状  随着chrome浏览器的发展壮大，ie的衰落，JavaScript得以快速发展，前端技术也越来越多。 JavaScript是一门基于原型、函数先行的语言，是一门多范式的语言，它支持面向对象编程，命令式编程，以及函数式编程。 由于设计时间的仓促等相关原因，JavaScript的语言设计存在很多的缺陷和严谨，正是因为这样才造就他的灵活性。 Javascript目前是网页编程的唯一语言，只要互联网继续发展，它就必然一起发展。 node.js使得Javascript可以用于后端的服务器编程。 coffeeScript使你可以用python和ruby的语法，撰写Javascript。 要发布新版本的语言标准，就可以弥补这些设计缺陷。如ES6等后续最新的版本 虽然标准的发布和标准的实现是两回事，但是JavaScript一定会日益强壮。  JavaScript的语言缺陷和严谨性只有自己使用了才知道，世界上哪有完美的东西。但他现在就是最适合网页编程的语言，所以从另一个角度说他也是最好的。 编程语言的坑只有实际通过项目编写才能遇到，我之后会将他们归类总结，以便更高效的编写。
 加油！ 已经开始学习一门语言了，要多下功夫把他学会了。 加油 加油💪💪💪
 谢谢观看🏀😄🏀😄🏀😄</description>
     </item>

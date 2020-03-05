@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/posts/" />
 
-<meta property="og:updated_time" content="2020-01-11T19:24:16+08:00" />
+<meta property="og:updated_time" content="2020-03-05T19:33:27+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -96,6 +96,21 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="https://zheng-en.xyz/posts/jsonp%E8%B7%A8%E5%9F%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="link black dim">
+        JSONP跨域的解决方案
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       同源策略（浏览器出于安全的考虑，只允许与同域下的接口交互）  同协议：如都是http或https 同域名：如都是jirengu.com/a或jirengu.com/b 同端口：如都是80端口 只有以上三个全部相同才能说是同源，否则都需要考虑跨域的问题。  JSONP（JSON with padding）  JSONP就是通过script标签加载数据的方式去获取数据当做JS代码来执行。 需提前在页面上声明一个函数，函数名通过接口传参的方式传给后台，后台解析到函数名后在原始数据上包裹这个函数名，发送给前端。也就是，JSONP需要对应的接口的后端配合才能实现。  应用代码 function jsonp(setting) { setting.data=setting.data||{} setting.key=setting.key||'callback' setting.callback=setting.callback||function(){} setting.data[setting.key]='__onGetData__' window.__onGetData__=function(data){ setting.callback(data) } const script=document.createElement('script') const query=[] for(var key in setting.data){ query.push(key+'='+encodeURIComponent(setting.data)) } script.src=setting.url+'?'+query.join('&amp;') document.head.appendChild(script) document.head.removeChild(script) } //实现一个jsonp的简单封装 jsonp({ url:'http://photo.sina.cn/aj/index', key:'jsoncallback', data:{ page:2, cate:'recommend' }, callback:function(ret){ console.log(ret) } })  后续有相关内容会继续补充。。。 
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="https://zheng-en.xyz/posts/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6%E7%9A%84%E4%BD%9C%E7%94%A8/" class="link black dim">
         Vue中的.sync修饰符的作用
       </a>
@@ -133,7 +148,8 @@ var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function 
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Vue的数据响应式的理解 我对数据响应式的理解  数据响应式，简单来说就是数据驱动。当数据发生改变时，vue会自动的去更新视图。 个人认为视图其实就是对数据的反应，我们最应该重视的如何去处理数据的变化。  基本原理  通过Object.defineProperty()方法设置了setter/getter属性完成了对data的特殊处理。 我们由了代理和监听的思想，监听就是修改data的过程，代理是在被修改过的原始data上创建的。这样，彼此的连接才不会断开。  vue的实现  图例  Vue的响应式，核心机制是观察者模式。
+      #Vue的数据响应式的理解
+我对数据响应式的理解  数据响应式，简单来说就是数据驱动。当数据发生改变时，vue会自动的去更新视图。 个人认为视图其实就是对数据的反应，我们最应该重视的如何去处理数据的变化。  基本原理  通过Object.defineProperty()方法设置了setter/getter属性完成了对data的特殊处理。 我们由了代理和监听的思想，监听就是修改data的过程，代理是在被修改过的原始data上创建的。这样，彼此的连接才不会断开。  vue的实现  图例  Vue的响应式，核心机制是观察者模式。
  数据是被观察的一方，发生改变时，通知所有的观察者，这样观察者可以做出响应，比如，重新渲染然后更新视图。
  我们把依赖数据的观察者称为 watcher
  Vue通过在data和watcher间创建一个 dep对象，来记录这种依赖关系。
@@ -251,24 +267,6 @@ var a = 1+3;  这就是一个语句，而1+3是一个表达式
 if(m===3){ //布尔值为ture，执行该代码块语句 } else{ //布尔值为false，执行该代码块语句 }  对同一个变量进行多次判断时，多个if&hellip;else语句可以连写在一起。
 if(m===0){ //.... }else if(m===1){ //.... }else if(m===2){ //... }else { //... }  else代码块总是与离自己最近的那个if语句配对
 var m = 1; var n = 2 ; if(m!
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://zheng-en.xyz/posts/%E5%86%85%E5%AD%98%E5%9B%BE%E5%92%8Cjs%E4%B8%96%E7%95%8C/" class="link black dim">
-        内存图和JS世界
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      内存图与JS世界 JS引擎（V8）  JS是单线程 编译：将JS代码翻译成机器能执行的字节码或机器码 优化：改写代码，使其更为高效 执行：执行上面的字节码或机器码 垃圾回收：把JS用完的内存回收，方便之后再次使用 JS代码在内存里运行  内存图 * stack区中的数据按顺序存放 * Heap区中的数据随机存放 * 数据分为两种：对象和非对象 * 非对象一般存放于stack区 * 对象存在Heap区（数据、函数也是对象）
-JS世界 * 对象的共有属性就是原型 * 每一个对象都有一个隐藏属性，指向原型（函数、数组也是一个对象）
-课后作业 JS的其他相关的基础知识都总结在笔记本上&mdash;&mdash; 以后用到JS语言写代码，都会将心得和想法持续更新，这样知识才会记得更牢💪💪💪
-谢谢观看🤭🤭🤭 加油&mdash;&mdash;&mdash;&ndash;
     </div>
   </div>
 </div>
