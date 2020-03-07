@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>郑李建的个人博客  | 手写一个Promise</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.59.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="手写一个Promise" />
+<meta property="og:description" content="根据自己对Promise的认识，实现一个简易的Promise Promise有三种状态，pending等待态，fulfilled成功态，rejected失败态 function Promise(executor){ const self=this self.status=&quot;pending&quot; self.value=undefined self.reason=undefined function resolve(value){ if(self.status===&#39;pending&#39;){ self.status=&#39;fulfilled&#39; self.value=value } } function reject(reason){ if(self.status===&#39;pending&#39;){ self.status=&#39;rejected&#39; self.reason=reason } } try{ executor(resolve,reject){ } }catch(e){ reject(e) //发生异常时捕获异常 } } fulfilled//成功时的回调 rejected//失败时的回调 Promise.prototype.then=function(fulfilled,rejected){ const self =this if(self.status===&#39;fulfilled&#39;){ fulfilled(self.value) } if(self.status===&#39;rejected&#39;){ rejected(self.reason) } } module.exports=Promise -------测试--------- const Promise =require(&#39;./Promise&#39;) const promise=new Promise((resolve,reject)=&gt;{ resolve(100) }) promise.then((val)=&gt;{ console.log(&#39;val:&#39;,val) },(e)=&gt;{ console.log(&#39;e:&#39;,e) }) //val: 100 测试成功   Promise实例可以实现多次then，当成功后会将then中的成功方法按顺序进行一次调用。我们可以先将then中的成功和失败回调存入数组，当成功时直接调动成功回调的数组即可。
+self.fulfilledCallbacks=[] self.rejectedCallbacks=[] function resolve(value){ if(self." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zheng-en.xyz/posts/%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AApromise/" />
+<meta property="article:published_time" content="2020-03-07T08:47:04+08:00" />
+<meta property="article:modified_time" content="2020-03-07T08:47:04+08:00" />
+<meta itemprop="name" content="手写一个Promise">
+<meta itemprop="description" content="根据自己对Promise的认识，实现一个简易的Promise Promise有三种状态，pending等待态，fulfilled成功态，rejected失败态 function Promise(executor){ const self=this self.status=&quot;pending&quot; self.value=undefined self.reason=undefined function resolve(value){ if(self.status===&#39;pending&#39;){ self.status=&#39;fulfilled&#39; self.value=value } } function reject(reason){ if(self.status===&#39;pending&#39;){ self.status=&#39;rejected&#39; self.reason=reason } } try{ executor(resolve,reject){ } }catch(e){ reject(e) //发生异常时捕获异常 } } fulfilled//成功时的回调 rejected//失败时的回调 Promise.prototype.then=function(fulfilled,rejected){ const self =this if(self.status===&#39;fulfilled&#39;){ fulfilled(self.value) } if(self.status===&#39;rejected&#39;){ rejected(self.reason) } } module.exports=Promise -------测试--------- const Promise =require(&#39;./Promise&#39;) const promise=new Promise((resolve,reject)=&gt;{ resolve(100) }) promise.then((val)=&gt;{ console.log(&#39;val:&#39;,val) },(e)=&gt;{ console.log(&#39;e:&#39;,e) }) //val: 100 测试成功   Promise实例可以实现多次then，当成功后会将then中的成功方法按顺序进行一次调用。我们可以先将then中的成功和失败回调存入数组，当成功时直接调动成功回调的数组即可。
+self.fulfilledCallbacks=[] self.rejectedCallbacks=[] function resolve(value){ if(self.">
+
+
+<meta itemprop="datePublished" content="2020-03-07T08:47:04&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-07T08:47:04&#43;08:00" />
+<meta itemprop="wordCount" content="173">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="手写一个Promise"/>
+<meta name="twitter:description" content="根据自己对Promise的认识，实现一个简易的Promise Promise有三种状态，pending等待态，fulfilled成功态，rejected失败态 function Promise(executor){ const self=this self.status=&quot;pending&quot; self.value=undefined self.reason=undefined function resolve(value){ if(self.status===&#39;pending&#39;){ self.status=&#39;fulfilled&#39; self.value=value } } function reject(reason){ if(self.status===&#39;pending&#39;){ self.status=&#39;rejected&#39; self.reason=reason } } try{ executor(resolve,reject){ } }catch(e){ reject(e) //发生异常时捕获异常 } } fulfilled//成功时的回调 rejected//失败时的回调 Promise.prototype.then=function(fulfilled,rejected){ const self =this if(self.status===&#39;fulfilled&#39;){ fulfilled(self.value) } if(self.status===&#39;rejected&#39;){ rejected(self.reason) } } module.exports=Promise -------测试--------- const Promise =require(&#39;./Promise&#39;) const promise=new Promise((resolve,reject)=&gt;{ resolve(100) }) promise.then((val)=&gt;{ console.log(&#39;val:&#39;,val) },(e)=&gt;{ console.log(&#39;e:&#39;,e) }) //val: 100 测试成功   Promise实例可以实现多次then，当成功后会将then中的成功方法按顺序进行一次调用。我们可以先将then中的成功和失败回调存入数组，当成功时直接调动成功回调的数组即可。
+self.fulfilledCallbacks=[] self.rejectedCallbacks=[] function resolve(value){ if(self."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://zheng-en.xyz/" class="f3 fw2 hover-white no-underline white-90 dib">
+      郑李建的个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">手写一个Promise</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-03-07T08:47:04&#43;08:00">March 7, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="根据自己对promise的认识-实现一个简易的promise">根据自己对Promise的认识，实现一个简易的Promise</h2>
+
+<h3 id="promise有三种状态-pending等待态-fulfilled成功态-rejected失败态">Promise有三种状态，pending等待态，fulfilled成功态，rejected失败态</h3>
+
+<pre><code class="language-(javascript)">function Promise(executor){
+const self=this
+self.status=&quot;pending&quot;
+self.value=undefined
+self.reason=undefined
+function resolve(value){
+if(self.status==='pending'){
+self.status='fulfilled'
+self.value=value
+}
+}
+function reject(reason){
+if(self.status==='pending'){
+    self.status='rejected'
+    self.reason=reason
+}
+}
+try{
+executor(resolve,reject){
+ }   
+}catch(e){
+    reject(e) //发生异常时捕获异常
+}
+}
+
+fulfilled//成功时的回调
+rejected//失败时的回调
+Promise.prototype.then=function(fulfilled,rejected){
+    const self =this
+    if(self.status==='fulfilled'){
+        fulfilled(self.value)
+    }
+    if(self.status==='rejected'){
+        rejected(self.reason)
+    }
+}
+
+module.exports=Promise
+
+-------测试---------
+const Promise =require('./Promise')
+
+const promise=new Promise((resolve,reject)=&gt;{
+resolve(100)
+})
+
+promise.then((val)=&gt;{
+console.log('val:',val)
+},(e)=&gt;{
+console.log('e:',e)
+})
+//val: 100 测试成功
+
+</code></pre>
+
+<ul>
+<li><p>Promise实例可以实现多次then，当成功后会将then中的成功方法按顺序进行一次调用。我们可以先将then中的成功和失败回调存入数组，当成功时直接调动成功回调的数组即可。</p>
+
+<pre><code class="language-(javascript)">self.fulfilledCallbacks=[]
+self.rejectedCallbacks=[]
+
+function resolve(value){
+if(self.status==='pending'){
+self.status='fulfilled'
+self.value=value
+self.fulfilledCallbacks.forEach((fn)=&gt;{
+         fn()
+      }
+   })
+}
+}
+
+function rejected(reason){
+if(self.status==='pending'){
+self.status='rejected'
+self.reason=reason
+self.rejectedCallbacks.forEach((fn)=&gt;{  //成功和失败函数数组里面存放都是其函数。
+    fn()
+})
+}
+}
+if(self.status==='pending'){
+self.fulfilledCallbacks.push(
+function(){fulfilled(self.value)}
+)
+self.rejectedCallbacks.push(
+function(){rejected(self.reason)}
+)
+}
+</code></pre></li>
+
+<li><p>Promise 的一大特点，就是链式调用。而 Promise 实现链式调用就是通过 then 方法返回一个新的 Promise。
+如果第一个 then 中返回了一个结果，会将 Promise 的结果继续传给下一个 then 中；如果有错误则走下一个 then 的失败。</p>
+
+<pre><code class="language-(javascript)">// 添加 resolvePromise 方法 处理链式调用问题
+function resolvePromise(p2, x, resolve, reject) {
+if(p2 === x){
+    return reject(new TypeError('循环引用'));
+}
+if(x!==null || (typeof x === 'object' || typeof x === 'function')){
+    try{
+        let then = x.then;
+        if(typeof then === 'function'){
+            then.call(x, function (y) {
+                resolvePromise(promise2, y, resolve, reject);
+            },function (err) {
+                reject(err);
+            });
+        }else{
+            resolve(x);
+        }
+    }catch(e){
+        reject(e);
+    }
+}else{
+    resolve(x);
+}
+}
+</code></pre></li>
+</ul>
+
+<h3 id="如有错误-欢迎指正-对于链式调用这一块的实现自己的理解还有待继续提升-加油">如有错误，欢迎指正。对于链式调用这一块的实现自己的理解还有待继续提升，加油。</h3>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zheng-en.xyz/" >
+    &copy; 2020 郑李建的个人博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

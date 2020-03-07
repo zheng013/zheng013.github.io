@@ -6,10 +6,20 @@
     <description>Recent content in Posts on 郑李建的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 05 Mar 2020 19:33:27 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2020 08:47:04 +0800</lastBuildDate>
     
 	<atom:link href="https://zheng-en.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>手写一个Promise</title>
+      <link>https://zheng-en.xyz/posts/%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AApromise/</link>
+      <pubDate>Sat, 07 Mar 2020 08:47:04 +0800</pubDate>
+      
+      <guid>https://zheng-en.xyz/posts/%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AApromise/</guid>
+      <description>根据自己对Promise的认识，实现一个简易的Promise Promise有三种状态，pending等待态，fulfilled成功态，rejected失败态 function Promise(executor){ const self=this self.status=&amp;quot;pending&amp;quot; self.value=undefined self.reason=undefined function resolve(value){ if(self.status===&#39;pending&#39;){ self.status=&#39;fulfilled&#39; self.value=value } } function reject(reason){ if(self.status===&#39;pending&#39;){ self.status=&#39;rejected&#39; self.reason=reason } } try{ executor(resolve,reject){ } }catch(e){ reject(e) //发生异常时捕获异常 } } fulfilled//成功时的回调 rejected//失败时的回调 Promise.prototype.then=function(fulfilled,rejected){ const self =this if(self.status===&#39;fulfilled&#39;){ fulfilled(self.value) } if(self.status===&#39;rejected&#39;){ rejected(self.reason) } } module.exports=Promise -------测试--------- const Promise =require(&#39;./Promise&#39;) const promise=new Promise((resolve,reject)=&amp;gt;{ resolve(100) }) promise.then((val)=&amp;gt;{ console.log(&#39;val:&#39;,val) },(e)=&amp;gt;{ console.log(&#39;e:&#39;,e) }) //val: 100 测试成功   Promise实例可以实现多次then，当成功后会将then中的成功方法按顺序进行一次调用。我们可以先将then中的成功和失败回调存入数组，当成功时直接调动成功回调的数组即可。
+self.fulfilledCallbacks=[] self.rejectedCallbacks=[] function resolve(value){ if(self.</description>
+    </item>
     
     <item>
       <title>JSONP跨域的解决方案</title>

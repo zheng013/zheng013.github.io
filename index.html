@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zheng-en.xyz/" />
 
-<meta property="og:updated_time" content="2020-03-05T19:33:27+08:00" />
+<meta property="og:updated_time" content="2020-03-07T08:47:04+08:00" />
 <meta itemprop="name" content="郑李建的个人博客">
 <meta itemprop="description" content="">
 
@@ -122,6 +122,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://zheng-en.xyz/posts/%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AApromise/" class="color-inherit dim link">
+            手写一个Promise
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          根据自己对Promise的认识，实现一个简易的Promise Promise有三种状态，pending等待态，fulfilled成功态，rejected失败态 function Promise(executor){ const self=this self.status=&quot;pending&quot; self.value=undefined self.reason=undefined function resolve(value){ if(self.status==='pending'){ self.status='fulfilled' self.value=value } } function reject(reason){ if(self.status==='pending'){ self.status='rejected' self.reason=reason } } try{ executor(resolve,reject){ } }catch(e){ reject(e) //发生异常时捕获异常 } } fulfilled//成功时的回调 rejected//失败时的回调 Promise.prototype.then=function(fulfilled,rejected){ const self =this if(self.status==='fulfilled'){ fulfilled(self.value) } if(self.status==='rejected'){ rejected(self.reason) } } module.exports=Promise -------测试--------- const Promise =require('./Promise') const promise=new Promise((resolve,reject)=&gt;{ resolve(100) }) promise.then((val)=&gt;{ console.log('val:',val) },(e)=&gt;{ console.log('e:',e) }) //val: 100 测试成功   Promise实例可以实现多次then，当成功后会将then中的成功方法按顺序进行一次调用。我们可以先将then中的成功和失败回调存入数组，当成功时直接调动成功回调的数组即可。
+self.fulfilledCallbacks=[] self.rejectedCallbacks=[] function resolve(value){ if(self.
+        </div>
+          <a href="https://zheng-en.xyz/posts/%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AApromise/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://zheng-en.xyz/posts/jsonp%E8%B7%A8%E5%9F%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="color-inherit dim link">
             JSONP跨域的解决方案
             </a>
@@ -163,37 +188,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/" class="color-inherit dim link">
-            Computed和watch的区别
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          computed VS watch 1.定义  computed是一个计算属性,类似于过滤器,对绑定到view的数据进行处理，属性。 watch是一个观察的动作,用于观察依赖数据的变化再去执行一个函数，异步。  2.语法  computed （{ [key: string]: Function | { get: Function, set: Function } }）
-var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function () { return this.a * 2 }, // both get and set aPlus: { get: function () { return this.a + 1 }, set: function (v) { this.a = v - 1 } } } })  watch（{ [key: string]: string | Function | Object | Array}）
-        </div>
-          <a href="https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://zheng-en.xyz/posts/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/" class="link black dim">
+              Computed和watch的区别
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://zheng-en.xyz/posts/%E5%AF%B9%E4%BA%8Evue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E5%9C%B0%E7%90%86%E8%A7%A3/" class="link black dim">
@@ -210,12 +216,6 @@ var vm = new Vue({ data: { a: 1 }, computed: { // get only or aDouble: function 
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://zheng-en.xyz/posts/%E6%B5%85%E6%9E%90mvc/" class="link black dim">
               浅析MVC
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://zheng-en.xyz/posts/jquery%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3/" class="link black dim">
-              jQuery的设计思想
             </a>
           </h2>
         
