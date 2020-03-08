@@ -39,7 +39,7 @@ self.fulfilledCallbacks=[] self.rejectedCallbacks=[] function resolve(value){ if
 
 <meta itemprop="datePublished" content="2020-03-07T08:47:04&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-07T08:47:04&#43;08:00" />
-<meta itemprop="wordCount" content="173">
+<meta itemprop="wordCount" content="258">
 
 
 
@@ -235,6 +235,49 @@ if(x!==null || (typeof x === 'object' || typeof x === 'function')){
 </ul>
 
 <h3 id="如有错误-欢迎指正-对于链式调用这一块的实现自己的理解还有待继续提升-加油">如有错误，欢迎指正。对于链式调用这一块的实现自己的理解还有待继续提升，加油。</h3>
+
+<p>&mdash;2020-3-8（用类进行一个Promise的简易实现）</p>
+
+<pre><code class="language-(javascript)">class Promise2 {
+succeed = null
+fail = null
+state = 'pending' resolve(result) {
+setTimeout(() =&gt; {
+this.state = 'fulfilled' this.succeed(result)
+})
+}
+reject(reason) {
+setTimeout(() =&gt; {
+this.state = 'rejected' this.fail(reason)
+})
+}
+constructor(fn) {
+fn(this.resolve.bind(this), this.reject.bind(this))
+}
+then(succeed, fail) {
+this.succeed = succeed
+this.fail = fail
+}
+}
+
+//测试
+new Promise2((resolve, reject) =&gt; {
+console.log('fn run...')
+setTimeout(() =&gt; {
+if (Math.random() &gt; 0.5) {
+resolve(100)
+} else {
+reject('失败')
+}
+}, 1000)
+}).then(n =&gt; {
+console.log(n)
+}, reason =&gt; {
+console.log(reason)
+})
+
+
+</code></pre>
 <ul class="pa0">
   
 </ul>
